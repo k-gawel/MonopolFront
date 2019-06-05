@@ -1,0 +1,17 @@
+<mat-list-item *ngIf="show">
+
+  <h3 mat-line>{{name}}</h3>
+  <p mat-line>
+    {{subname}} {{transferable.addProperty()}}
+  </p>
+  <div>{{price}}</div>
+
+  <button mat-icon-button *ngIf="transferable.addProperty() === true" (click)="addItem()">
+    <mat-icon>add_box</mat-icon>
+  </button>
+
+  <button mat-icon-button *ngIf="transferable.removeProperty() === true" (click)="removeItem()">
+    <mat-icon>delete</mat-icon>
+  </button>
+
+</mat-list-item>

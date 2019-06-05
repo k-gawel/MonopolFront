@@ -1,0 +1,7 @@
+<app-first-row [transaction]="transaction" (add)="add = $event" [side]="side" style="height: 15%"></app-first-row>
+
+<mat-action-list style="height: 80%; overflow-y: scroll" >
+
+    <app-transaction-add [transaction]="transaction" [side]="side" [add]="add"></app-transaction-add>
+
+</mat-action-list>

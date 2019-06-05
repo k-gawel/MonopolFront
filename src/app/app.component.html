@@ -1,0 +1,2 @@
+<app-games-list *ngIf="currentBoard === null"></app-games-list>
+<app-game *ngIf="currentBoard != null" [board]="currentBoard"></app-game>

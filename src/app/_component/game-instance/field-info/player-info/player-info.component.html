@@ -1,0 +1,55 @@
+ <mat-toolbar color="primary" style="height: 20%; display: flex; width: 100%; padding: 0 5px">
+    <button mat-icon-button (click)="back()">
+      <mat-icon>keyboard_return</mat-icon>
+    </button>
+
+   <div>
+    <mat-card-title>{{player.name}}</mat-card-title>
+    <mat-card-subtitle>{{player.properties.getMoney().toString()}}</mat-card-subtitle>
+   </div>
+ </mat-toolbar>
+
+  <mat-divider></mat-divider>
+
+    <mat-accordion>
+
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>TOWNS</mat-panel-title>
+        <mat-panel-description>{{player.properties.getTowns().length}}</mat-panel-description>
+      </mat-expansion-panel-header>
+
+      <mat-list>
+        <mat-list-item *ngFor="let t of player.properties.getTowns()" style="">
+          {{t.toString()}}
+        </mat-list-item>
+      </mat-list>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>UTILITIES</mat-panel-title>
+        <mat-panel-description>{{player.properties.getUtilities().length}}</mat-panel-description>
+      </mat-expansion-panel-header>
+
+      <mat-list>
+        <mat-list-item *ngFor="let t of player.properties.getUtilities()" style="">
+          {{t.toString()}}
+        </mat-list-item>
+      </mat-list>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel>
+        <mat-expansion-panel-header>
+            <mat-panel-title>DISCOUNTS</mat-panel-title>
+            <mat-panel-description>{{player.properties.getDiscounts().length}}</mat-panel-description>
+        </mat-expansion-panel-header>
+
+        <mat-list>
+            <mat-list-item *ngFor="let t of player.properties.getDiscounts()" style="">
+                {{t.toString()}}
+            </mat-list-item>
+        </mat-list>
+    </mat-expansion-panel>
+
+  </mat-accordion>

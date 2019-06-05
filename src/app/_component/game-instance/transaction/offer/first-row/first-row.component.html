@@ -1,0 +1,18 @@
+<mat-toolbar color="primary" style="height: 20%;">
+
+
+  <button mat-icon-button (click)="click()">
+    <mat-icon> {{_add ? 'keyboard_return' : 'add_circle_outline' }} </mat-icon>
+  </button>
+
+  <div *ngIf="!isBankTransaction" style="box-sizing: border-box">
+
+    <mat-slider min="0" [max]="side.properties.getMoney().amount" [(ngModel)]="moneyAmount" thumbLabel tickInterval="5"></mat-slider>
+
+    <button mat-icon-button matSuffix (click)="setMoney()">
+      <mat-icon>sentiment_very_satisfied</mat-icon>
+    </button>
+
+  </div>
+
+</mat-toolbar>

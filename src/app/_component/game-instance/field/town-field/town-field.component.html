@@ -1,0 +1,16 @@
+<div class="improvements-area"
+      [ngStyle]="{'background-color': town.region.name}">
+  <div class="improvement" *ngFor="let improvement of town.improvements.toArray()"></div>
+</div>
+
+<p class="mid-text">
+  {{town.name}}
+</p>
+
+<div class="price-area" [style.background-image]="town.owner.color != null ?
+                            'linear-gradient(to top, ' + town.owner.color + ', transparent)' : ''">
+  <span class="sm-text">
+    {{town.price}}
+  </span>
+</div>
+

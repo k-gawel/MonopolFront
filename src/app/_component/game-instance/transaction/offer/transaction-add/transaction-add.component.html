@@ -1,0 +1,49 @@
+<ng-container *ngIf="add">
+
+
+  <mat-accordion>
+
+    <!--    <button mat-list-item *ngIf="isBank()">ADD IMPROVEMENT</button>-->
+    <new-discount-form *ngIf="!isBank(transaction)" [chargeables]="getUtilities().concat(getTowns())"></new-discount-form>
+    <new-improvement-form *ngIf="isBank(transaction)" [side]="side" ></new-improvement-form>
+
+    <ng-container *ngTemplateOutlet="addPanel; context: { array: getTowns(), name: 'TOWNS' }"></ng-container>
+    <ng-container *ngTemplateOutlet="addPanel; context: { array: getImprovements(), name: 'IMPROVEMENTS'}"></ng-container>
+    <ng-container *ngTemplateOutlet="addPanel; context: { array: getUtilities(), name: 'UTILITIES'}"></ng-container>
+
+  </mat-accordion>
+
+</ng-container>
+
+<ng-container *ngIf="!add">
+  <app-transferable-item *ngFor="let transferable of transaction.getOffer(side).toArray()"
+                         [transaction]="transaction"
+                         [transferable]="transferable"
+                         [show]="transferable.removeProperty() === true">
+  </app-transferable-item>
+</ng-container>
+
+
+<ng-template #addPanel let-array="array" let-name="name">
+
+  <mat-expansion-panel *ngIf="array.length != 0">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        {{name}}
+      </mat-panel-title>
+      <mat-panel-description>
+        {{array.length}}
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+
+    <div class="mat-expansion-panel-body" style="padding: 0">
+      <app-transferable-item *ngFor="let transferable of array"
+                             [transaction]="transaction"
+                             [transferable]="transferable"
+                             [show]="transferable.addProperty() === true">
+      </app-transferable-item>
+    </div>
+
+  </mat-expansion-panel>
+
+</ng-template>

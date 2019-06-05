@@ -1,0 +1,24 @@
+<mat-card style="width: 400px; margin: auto">
+
+  <mat-card-title>
+    SELEXT OR CREATE YOUR GAME
+  </mat-card-title>
+
+  <form class="example-form">
+    <mat-form-field style="width: 100%;">
+      <input matInput placeholder="Select name" name="name" [(ngModel)]="name">
+    </mat-form-field>
+  </form>
+
+  <mat-action-list>
+    <button mat-list-item (click)="createNewGame()"> <b> CREATE NEW GAME </b></button>
+    <div *ngFor="let link of list">
+      <button mat-list-item (click)="selectGame(link)" style="display: inline-block; overflow-x: hidden; white-space: nowrap; text-overflow: ellipsis">
+        <h2>{{link.index}}</h2>
+        <span *ngFor="let p of link.players">{{p}}</span>
+      </button>
+      <mat-divider></mat-divider>
+    </div>
+  </mat-action-list>
+
+</mat-card>

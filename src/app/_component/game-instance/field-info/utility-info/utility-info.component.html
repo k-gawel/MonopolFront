@@ -1,0 +1,53 @@
+<mat-toolbar color="primary" style="height: 20%; display: flex; width: 100%; padding: 0 5px">
+
+  <button mat-icon-button (click)="back()">
+    <mat-icon>keyboard_return</mat-icon>
+  </button>
+
+  <div class="mat" style="margin: 0; width: calc(100% - 40px)">
+    <div class="mat-card-title" style="width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap">
+      {{utility.name}}
+    </div>
+    <div class="mat-card-subtitle" style="display: flex; justify-content: space-between">
+      <span>{{utility.region.name}}</span>
+      <span (click)="select(utility.owner)">{{utility.owner.name}}</span>
+      <span>{{utility.getBasicPrice().toString()}}</span>
+    </div>
+  </div>
+</mat-toolbar>
+
+<mat-accordion>
+
+
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        CHARGE
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+
+    <div *ngFor="let util of utility.region.utilities.toArray(); let i = index"  style="height: 16.6666%; display: flex; justify-content: space-between">
+      <span>OWNS: {{i}}</span>
+      <span>{{utility.chargeOf(i).toString()}}</span>
+    </div>
+
+  </mat-expansion-panel>
+
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        DISCOUNTS
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+
+    <mat-action-list *ngFor="let p of getPlayers()"  style="">
+      <button (click)="select(p)" mat-list-item *ngIf="p.properties.getDiscount(utility) != null" style="height: 16.6666%; display: flex; justify-content: space-between">
+        <span>{{p.name}}</span>
+        <span>{{p.properties.getDiscount(utility).toString()}}</span>
+      </button>
+    </mat-action-list>
+
+  </mat-expansion-panel>
+
+
+</mat-accordion>

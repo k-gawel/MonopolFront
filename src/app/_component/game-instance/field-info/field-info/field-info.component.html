@@ -1,0 +1,15 @@
+<!--suppress AngularInvalidExpressionResultType -->
+<div style="height: 100%; overflow: scroll">
+    <app-town-info *ngIf="type === 'TOWN'" [town]="instance"></app-town-info>
+    <app-utility-info *ngIf="type === 'UTILITY'" [utility]="instance"></app-utility-info>
+    <app-card-group-info *ngIf="type === 'CARD_GROUP'" [cardGroup]="instance"></app-card-group-info>
+    <app-player-info *ngIf="type === 'PLAYER'" [player]="instance"></app-player-info>
+
+    <ng-container *ngIf="type === 'NONE'">
+
+        <mat-action-list>
+            <button mat-list-item *ngFor="let p of getPlayers()" (click)="select(p)">{{p.toString()}}</button>
+        </mat-action-list>
+
+    </ng-container>
+</div>

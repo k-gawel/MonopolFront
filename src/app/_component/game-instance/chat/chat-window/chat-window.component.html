@@ -1,0 +1,22 @@
+<mat-toolbar color="primary" style="height: 15%;">
+    <span *ngIf="currentTour != null">TOUR: {{currentTour.index + ' ' + currentTour.player.name}}</span>
+    <span *ngIf="currentTour == null">GAME DIDN'T STARTED YET</span>
+    <fa name="cog" animation="spin"></fa>
+    <i class="fa fa-apple"></i>
+</mat-toolbar>
+
+<div style="height: 70%; background-color: white; overflow-y: scroll">
+  <app-chat-message *ngFor="let m of messagesarray" [messageArray]="m"></app-chat-message>
+</div>
+
+<mat-divider></mat-divider>
+
+<mat-form-field color="primary" appearance="legacy" style="height: 15%; width: 100%">
+
+    <input matInput min="0" name="newMessage" type="text" placeholder="Send chat message" (keyup.ENTER)="sendMessage()" [(ngModel)]="newMessage">
+
+    <button mat-icon-button matSuffix (click)="sendMessage()">
+        <mat-icon>sentiment_very_satisfied</mat-icon>
+    </button>
+
+</mat-form-field>

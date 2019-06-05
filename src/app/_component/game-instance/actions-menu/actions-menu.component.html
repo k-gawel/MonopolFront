@@ -1,0 +1,12 @@
+<button mat-button *ngIf="canEndTour()" (click)="endTour()">
+    <h3>END TOUR</h3>
+</button>
+
+<button mat-icon-button *ngIf="canStartGame()" (click)="endTour()">
+    <h1>START GAME</h1>
+</button>
+
+<button mat-icon-button *ngIf="canRollDice()" (click)="rollTheDice()">
+    <h3>ROLL THE DICE</h3>
+</button>
+

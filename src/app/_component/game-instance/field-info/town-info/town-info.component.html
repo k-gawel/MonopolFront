@@ -1,0 +1,50 @@
+  <mat-toolbar color="primary" style="height: 20%; display: flex; width: 100%; padding: 0 5px">
+
+    <button mat-icon-button (click)="back()">
+      <mat-icon>keyboard_return</mat-icon>
+    </button>
+
+    <div class="mat" style="margin: 0; width: calc(100% - 40px)">
+      <div class="mat-card-title" style="width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap">
+        {{town.name}}
+      </div>
+      <div class="mat-card-subtitle" style="display: flex; justify-content: space-between">
+        <span [ngStyle]="{'color': town.region.color}">{{town.region.name}}</span>
+        <span>{{town.owner.name}}</span>
+        <span>{{town.getBasicPrice().toString()}}</span>
+      </div>
+    </div>
+  </mat-toolbar>
+
+  <mat-accordion>
+
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          CHARGE
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+
+      <div *ngFor="let i of [0,1,2,3,4,5]"  style="height: 16.6666%; display: flex; justify-content: space-between">
+        <span>IMRPOVEMENTS: {{i}}</span>
+        <span>{{town.chargeOf(i).toString()}}</span>
+      </div>
+
+    </mat-expansion-panel>
+
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>DISCOUNTS</mat-panel-title>
+      </mat-expansion-panel-header>
+
+      <mat-list>
+        <mat-list-item *ngFor="let p of getPlayers() " style="">
+          <span *ngIf="p.properties.getDiscount(town) != null" style="display: flex; justify-content: space-between;">
+            <span>{{p.name}}</span>
+            <span>{{p.properties.getDiscount(town).toString()}}</span>
+          </span>
+        </mat-list-item>
+      </mat-list>
+    </mat-expansion-panel>
+
+  </mat-accordion>

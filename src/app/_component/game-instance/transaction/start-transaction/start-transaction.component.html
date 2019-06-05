@@ -1,0 +1,17 @@
+<mat-toolbar color="accent" style="text-align: center; height: 15%">
+  START TRANSACTION
+</mat-toolbar>
+
+<mat-action-list style="height: 85%;">
+
+  <button mat-list-item
+          *ngFor="let player of getPlayers()"
+          [ngStyle]="{'background-color': player.color}"
+          style="height: 20%"
+          (click)="initTransaction(player)">
+    {{player.name}}
+  </button>
+
+</mat-action-list>
+
+

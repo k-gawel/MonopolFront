@@ -1,0 +1,21 @@
+<mat-expansion-panel *ngIf="getTownsThaCanBeImproved().length != 0">
+    <mat-expansion-panel-header>
+        <mat-panel-title>
+            ADD IMPROVEMENT
+        </mat-panel-title>
+    </mat-expansion-panel-header>
+
+    <mat-action-list>
+
+        <button mat-list-item *ngFor="let t of getTownsThaCanBeImproved()">
+            {{t.toString() + ' ' + t.improvements.size()}}
+
+            <button mat-icon-button (click)="add(t)">
+                <mat-icon>addd_box</mat-icon>
+            </button>
+        </button>
+
+
+    </mat-action-list>
+
+</mat-expansion-panel>

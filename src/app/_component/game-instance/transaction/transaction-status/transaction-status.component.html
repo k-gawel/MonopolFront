@@ -1,0 +1,48 @@
+<span *ngIf="isCompulsory()">
+  <span *ngIf="isInitiator()">{{transaction.getInvited().name}} OWES YOU </span>
+  <span *ngIf="!isInitiator()">YOU OWE {{transaction.getInitiator()}} </span>
+  {{transaction.demand.toString() //noinspection UnresolvedVariable}}
+</span>
+
+<span *ngIf="!isCompulsory()">
+  TRANSACTION WITH {{isInitiator() ? transaction.getInvited().name : transaction.getInitiator().name}}
+</span>
+
+
+
+<ng-container *ngIf="isBank()" class="transaction-status-buttons">
+
+  <button mat-button [disabled]="!canAfford()" (click)="setStatus(true)">
+    <span *ngIf="getDifference() > 0">RECEIVE ${{getDifference()}}</span>
+    <span *ngIf="getDifference() <= 0">PAY ${{-getDifference()}}</span>
+  </button>
+
+  <button mat-button class="status-button" (click)="setStatus(false)">
+    DECLINE
+  </button>
+
+</ng-container>
+
+
+<ng-container *ngIf="isCompulsory()" class="transaction-status-buttons">
+
+  <button mat-button (click)="setStatus(true)">
+    ACCEPT
+  </button>
+  <button mat-button *ngIf="isInitiator()" (click)="setStatus(false)">
+    {{isInitiator() ? 'COLLECT ' : 'PAY ' + getDemand().toString()}}
+  </button>
+
+</ng-container>
+
+
+<ng-container *ngIf="isVoluntary()" class="transaction-status-buttons">
+
+  <button mat-button (click)="setStatus(true)">
+    ACCEPT
+  </button>
+  <button mat-button (click)="setStatus(false)">
+    DECLINE
+  </button>
+
+</ng-container>

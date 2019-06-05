@@ -1,0 +1,3 @@
+<app-start-transaction *ngIf="canStartTransaction()"></app-start-transaction>
+
+<app-transaction *ngIf="isPlayerSide()" [transaction]="transaction"></app-transaction>

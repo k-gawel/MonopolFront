@@ -1,0 +1,18 @@
+<!--NAME-->
+<p class="mid-text">
+  {{utility.name}}
+</p>
+
+
+<!--ICON-->
+<p [ngClass]="'utility-icon ' + getIconName()"></p>
+
+
+<!--PRICE-->
+<div class="price-area"
+     [style.background-image]="utility.owner.color != null ?
+                            'linear-gradient(to top, ' + utility.owner.color + ', transparent)' : ''">
+  <span class="sm-text">
+    {{utility.price}}
+  </span>
+</div>

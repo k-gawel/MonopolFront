@@ -1,0 +1,7 @@
+<p style="margin: 7px">
+  <span *ngFor="let m of messageArray">
+    <span *ngIf="isInstance(m)" appProperty [property]="m">X</span>
+    <span *ngIf="isString(m)">{{m}}</span>
+  </span>
+</p>
+<mat-divider></mat-divider>
