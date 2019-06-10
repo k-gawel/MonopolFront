@@ -27,8 +27,7 @@ export class GameService {
   constructor(private sessionService: SessionService,
               private requestService: RequestService,
               private webSocketService: WebSocketService,
-              private transactionService: TransactionService,
-              private chatService: ChatService) { }
+              private transactionService: TransactionService) { }
 
 
   getExistingGame() {
@@ -40,6 +39,7 @@ export class GameService {
   addPlayer(player: Player) {
     this.$board.value.putPlayer(player);
   }
+
 
   createGame(json: JSON) {
     let session: string = Object.keys(json)[0];
@@ -72,8 +72,14 @@ export class GameService {
     Discount.ALL.clean();
   }
 
-  sendChatMessages() {
+  abortGame(winner?: Player) {
+
+    if (winner != undefined)
+      alert(winner.name + " HAS WON!");
+
+    this.$board.next(null);
   }
+
 
 
 }

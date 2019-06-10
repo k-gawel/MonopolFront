@@ -39,10 +39,6 @@ export class FieldInfoComponent implements OnInit {
     this.service.setField(i);
   }
 
-  getPlayers(): Player[] {
-    return Player.ALL.toArray()
-        .filter(p => !p.isBank());
-  }
 
 
 

@@ -22,6 +22,7 @@ export class TransactionAddComponent implements OnInit {
   constructor(private requestService: TransactionRequestService) { }
 
   ngOnInit() {
+
   }
 
   newImprovementForm: Town;

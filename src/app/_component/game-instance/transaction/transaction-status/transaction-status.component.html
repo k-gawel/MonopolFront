@@ -1,13 +1,3 @@
-<span *ngIf="isCompulsory()">
-  <span *ngIf="isInitiator()">{{transaction.getInvited().name}} OWES YOU </span>
-  <span *ngIf="!isInitiator()">YOU OWE {{transaction.getInitiator()}} </span>
-  {{transaction.demand.toString() //noinspection UnresolvedVariable}}
-</span>
-
-<span *ngIf="!isCompulsory()">
-  TRANSACTION WITH {{isInitiator() ? transaction.getInvited().name : transaction.getInitiator().name}}
-</span>
-
 
 
 <ng-container *ngIf="isBank()" class="transaction-status-buttons">
@@ -29,7 +19,7 @@
   <button mat-button (click)="setStatus(true)">
     ACCEPT
   </button>
-  <button mat-button *ngIf="isInitiator()" (click)="setStatus(false)">
+  <button mat-button (click)="setStatus(false)">
     {{isInitiator() ? 'COLLECT ' : 'PAY ' + getDemand().toString()}}
   </button>
 
@@ -46,3 +36,13 @@
   </button>
 
 </ng-container>
+
+<span *ngIf="isCompulsory()">
+  <span *ngIf="isInitiator()">{{transaction.getInvited().name}} OWES YOU </span>
+  <span *ngIf="!isInitiator()">YOU OWE {{transaction.getInitiator()}} </span>
+  {{transaction.demand.toString() //noinspection UnresolvedVariable}}
+</span>
+
+<span *ngIf="!isCompulsory()">
+  TRANSACTION WITH {{isInitiator() ? transaction.getInvited().name : transaction.getInitiator().name}}
+</span>

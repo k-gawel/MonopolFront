@@ -38,13 +38,15 @@
       </mat-expansion-panel-header>
 
       <mat-list>
-        <mat-list-item *ngFor="let p of getPlayers() " style="">
-          <span *ngIf="p.properties.getDiscount(town) != null" style="display: flex; justify-content: space-between;">
-            <span>{{p.name}}</span>
-            <span>{{p.properties.getDiscount(town).toString()}}</span>
-          </span>
+        <mat-list-item *ngFor="let d of discounts">
+          <p mat-line appProperty [property]="d.getOwner()"></p>
+          <p mat-line style="display: flex; justify-content: space-between">
+            <span>{{d.getValueString()}}</span> <span>{{d.endTour}}</span>
+          </p>
         </mat-list-item>
       </mat-list>
+
     </mat-expansion-panel>
 
   </mat-accordion>
+

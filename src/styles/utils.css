@@ -1,0 +1,77 @@
+.accordion {
+
+}
+
+.accordion .accordion-button {
+
+}
+
+.accordion .accordion-body {
+
+}
+
+
+/* NO SELECT */
+
+.noselect {
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}
+
+
+/* DIVIDER*/
+
+.divider {
+    height: .5px;
+    background: #000;
+    background: -webkit-linear-gradient(left, rgb(255,255,255) 0%, rgb(50,50,50) 50%, rgb(255,255,255) 100%);
+}
+.divider.light {
+    background: #fff;
+    background: -webkit-linear-gradient(left, rgb(90,90,90) 0%, rgb(255,255,255) 50%, rgb(90,90,90) 100%);
+}
+
+.divider.light:before {
+    position:relative;
+    float:left;
+    background: linear-gradient(to right, rgba(100, 100, 100, 0), rgba(100, 100, 100, 1) 50%);
+    margin-top:2px;
+    width:50%;
+    height:.5px;
+    content:"";
+}
+
+.divider.light:after {
+    position:relative;
+    float:right;
+    background: linear-gradient(to left, rgba(100, 100, 100, 0), rgba(100, 100, 100, 1) 50%);
+    margin-top:2px;
+    width:50%;
+    height:.5px;
+    content:"";
+}
+
+.divider:before {
+    position:relative;
+    float:left;
+    background: linear-gradient(to right, rgba(200, 200, 200, 0), rgba(200, 200, 200, 1) 50%);
+    margin-top:2px;
+    width:50%;
+    height:.5px;
+    content:"";
+}
+
+.divider:after {
+    position:relative;
+    float:right;
+    background: linear-gradient(to left, rgba(100, 200, 200, 0), rgba(200, 200, 200, 1) 50%);
+    margin-top:2px;
+    width:50%;
+    height:.5px;
+    content:"";
+}

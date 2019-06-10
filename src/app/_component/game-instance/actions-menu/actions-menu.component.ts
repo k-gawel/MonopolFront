@@ -67,4 +67,18 @@ export class ActionsMenuComponent implements OnInit {
     this.playerActionRequestService.rollTheDice();
   }
 
+  canLeave(): boolean {
+    try {
+      return !this.isPlayerTour() && this.transactionService.$transaction.value.getOffer(this.sessionService.getPlayer()) == null;
+    } catch (e) {
+      return true;
+    }
+
+
+  }
+
+  leave() {
+    this.playerActionRequestService.leave();
+  }
+
 }

@@ -41,15 +41,15 @@ export class Utility extends AbstractTransferable implements Transferable, Charg
     return this.chargeOf(this.region.ofPlayer(this.owner));
   }
 
-  chargeOf(utilitiesOfRegion: number): Money {
-    let charge = this.region.ofPlayer(this.owner) / 4 * this.price;
+  chargeOf(ownerUtilities: number): Money {
+    let charge = this.price / this.region.utilities.size() * ownerUtilities;
     let result = new Money();
     result.amount = charge;
     return result;
   }
 
   maxCharge() {
-    return this.getCharge(4);
+    return this.getCharge(this.region.utilities.size());
   }
 
   getBasicPrice(): Money {

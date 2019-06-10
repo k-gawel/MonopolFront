@@ -5,6 +5,7 @@ import {Discount} from "../properties/transferable/Discount";
 import {Utility} from "../properties/transferable/Utility";
 import {Town} from "../properties/transferable/Town";
 import {Improvement} from "../properties/transferable/Improvement";
+import {Chargeable} from "./Chargeable";
 
 
 export interface Transferable extends Instance {
@@ -62,8 +63,9 @@ export class TransferableCollection extends InstancesList<Transferable> {
       this.money.add(money);
   }
 
-  public getDiscount(chargeable: Town | Utility): Discount {
-    return this.discounts.find(d => d.chargeable.equals(chargeable));
+  public getDiscount(chargeable: Chargeable): Discount {
+    return  this.getDiscounts().find(d => {
+      return d.chargeable.equals(chargeable)});
   }
 
   public getMoney(): Money {
@@ -106,5 +108,6 @@ export class TransferableCollection extends InstancesList<Transferable> {
         .filter(t => t instanceof Discount)
         .map(t => <Discount> t);
   }
+  
 
 }

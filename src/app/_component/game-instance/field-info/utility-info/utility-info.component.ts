@@ -4,6 +4,7 @@ import {Tour} from "../../../../_model/instance/utils/Tour";
 import {InfoCardService} from "../../../../_service/game/field-info/info-card.service";
 import {Instance} from "../../../../_model/instance/utils/AbstractInstance";
 import {Player} from "../../../../_model/instance/Player";
+import {Discount} from "../../../../_model/instance/properties/transferable/Discount";
 
 @Component({
   selector: 'app-utility-info',
@@ -13,13 +14,17 @@ import {Player} from "../../../../_model/instance/Player";
 export class UtilityInfoComponent implements OnInit {
 
   @Input() utility: Utility;
-  currentAction: Tour;
 
+  discounts: Discount[] = [];
 
   constructor(private service: InfoCardService) {
   }
 
   ngOnInit() {
+    this.discounts = Player.ALL.toArray()
+        .filter(p => !p.isBank())
+        .map(p => p.properties.getDiscount(this.utility))
+        .filter(d => d != null);
   }
 
   back() {

@@ -1,12 +1,15 @@
 import {Injectable} from '@angular/core';
 import {HttpClient, HttpParams} from "@angular/common/http";
+import {environment} from "../../../../environments/environment";
+
+console.log("REST URL: ",  "http://" + location.host + location.pathname);
 
 @Injectable({
   providedIn: 'root'
 })
 export class RestApiService {
 
-  private url: string = "http://localhost:8080/";
+  private url: string = "http://" + location.host + location.pathname;
 
   constructor(private http: HttpClient) { }
 
@@ -14,12 +17,15 @@ export class RestApiService {
   public getList(): Promise<JSON[]> {
     let url = this.url + "games-list";
 
+    console.log("GET LIST URL" + url);
+
     return this.http.get<JSON[]>(url).toPromise();
   }
 
 
   public createNewGame(playerName: string): Promise<JSON> {
     let url = this.url + "game/new";
+
     let params = new HttpParams();
     params = params.append("player_name", playerName);
 

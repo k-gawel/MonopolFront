@@ -1,6 +1,9 @@
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 @import "../node_modules/font-awesome/css/font-awesome.css";
 
+* {
+  scrollbar-width: none;
+}
 
 ::-webkit-scrollbar {
   width: 0;
@@ -81,53 +84,53 @@
   display: flex;
 }
 
-.transaction .body .column {
+.transaction .body .offer {
   padding-top: 10px;
   border-bottom: solid black 1px;
   width: 100%;
   box-sizing: border-box;
 }
 
-.transaction .body .column:only-child {
+.transaction .body .offer:only-child {
   border: none;
   padding: 0;
 }
 
-.transaction .body .column .money-row {
+.transaction .body .offer .money-row {
   width: 100%;
   height: 20px;
   display: flex;
 }
 
-.transaction .body .column:only-child > button {
+.transaction .body .offer:only-child > button {
   height: 20%;
   width: 100%;
   font-size: xx-large;
 }
 
-.transaction .body .column:first-child {
+.transaction .body .offer:first-child {
   border-right: solid black 1px;
 }
 
-.transaction .body .column:last-child {
+.transaction .body .offer:last-child {
   border-left: solid black 2px;
 }
 
-.transaction .body .column .row {
+.transaction .body .offer .row {
   border-bottom: grey solid 1px;
   overflow: hidden;
   white-space: nowrap;
   display: flex;
 }
 
-.transaction .body .column .row .title {
+.transaction .body .offer .row .title {
   width: 100%;
 }
 
-.transaction .body .column .row .icon {
+.transaction .body .offer .row .icon {
 }
 
-.transaction .body .column .row:first-child {
+.transaction .body .offer .row:first-child {
   border-bottom: none;
   text-align: center;
   font-style: italic;
@@ -150,7 +153,9 @@
   grid-column: 3/3;
   grid-row: 2;
   border: none;
+  background-color: transparent;
 }
+
 
 .actions > button {
   width: 100%;

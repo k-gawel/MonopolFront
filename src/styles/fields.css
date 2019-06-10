@@ -1,0 +1,9 @@
+.field {
+    width: 10vmax;
+    height: 15.625vmax;
+    border: solid 1px black;
+}
+
+.fields-row {
+    display: inline-block;
+}

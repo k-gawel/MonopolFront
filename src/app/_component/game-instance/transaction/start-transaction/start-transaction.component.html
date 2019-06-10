@@ -7,7 +7,7 @@
   <button mat-list-item
           *ngFor="let player of getPlayers()"
           [ngStyle]="{'background-color': player.color}"
-          style="height: 20%"
+          style="height: 20%; filter: alpha(opacity=60);"
           (click)="initTransaction(player)">
     {{player.name}}
   </button>

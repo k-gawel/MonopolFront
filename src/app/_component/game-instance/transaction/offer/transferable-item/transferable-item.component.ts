@@ -5,6 +5,8 @@ import {TransactionRequestService} from "../../../../../_service/request/transac
 import {Town} from "../../../../../_model/instance/properties/transferable/Town";
 import {Utility} from "../../../../../_model/instance/properties/transferable/Utility";
 import {Improvement} from "../../../../../_model/instance/properties/transferable/Improvement";
+import {InfoCardService} from "../../../../../_service/game/field-info/info-card.service";
+import {Discount} from "../../../../../_model/instance/properties/transferable/Discount";
 
 @Component({
   selector: 'app-transferable-item',
@@ -18,7 +20,8 @@ export class TransferableItemComponent implements OnInit {
   @Input() show: boolean;
 
 
-  constructor(private requestService: TransactionRequestService) { }
+  constructor(private requestService: TransactionRequestService,
+              private infoService: InfoCardService) { }
   name: string;
   subname: string;
   price: string;
@@ -28,7 +31,6 @@ export class TransferableItemComponent implements OnInit {
   }
 
   removeItem() {
-    console.log("REMOVING:  ", this.transferable);
     this.requestService.removeItem(this.transferable);
   }
 
@@ -39,6 +41,8 @@ export class TransferableItemComponent implements OnInit {
       this.describeUtility(this.transferable);
     else if(this.transferable instanceof Improvement)
       this.describeImprovement(this.transferable);
+    else if(this.transferable instanceof Discount)
+      this.describeDiscount(this.transferable);
     else this.show = false;
   }
 
@@ -60,5 +64,9 @@ export class TransferableItemComponent implements OnInit {
     this.price = utility.getBasicPrice().toString();
   }
 
+  describeDiscount(discount: Discount) {
+    this.name = discount.getValueString() + " until T" + discount.endTour;
+    this.subname = discount.chargeable.name;
+  }
 
 }

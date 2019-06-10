@@ -1,9 +1,72 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="716f6200-f55d-4381-9859-23c900a36fb2" name="Default Changelist" comment="" />
+    <list default="true" id="c379e23e-7309-4eb4-9ef7-633121b77de6" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Monopol-Front.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/css-test/board/fields-row.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/css-test/transaction/transaction.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/styles/fields.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/styles/transaction.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/styles/utils.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/styles/utils/hover.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Monopol-Front.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/angular.json" beforeDir="false" afterPath="$PROJECT_DIR$/angular.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/_component/game-instance/actions-menu/actions-menu.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/_component/game-instance/actions-menu/actions-menu.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/_component/game-instance/actions-menu/actions-menu.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/_component/game-instance/actions-menu/actions-menu.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/_component/game-instance/actions-menu/actions-menu.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/_component/game-instance/actions-menu/actions-menu.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/_component/game-instance/chat/chat-message/chat-message.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/_component/game-instance/chat/chat-message/chat-message.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/_component/game-instance/chat/chat-window/chat-window.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/_component/game-instance/chat/chat-window/chat-window.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/_component/game-instance/chat/chat-window/chat-window.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/_component/game-instance/chat/chat-window/chat-window.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/_component/game-instance/field-info/card-group-info/card-group-info.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/_component/game-instance/field-info/card-group-info/card-group-info.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/_component/game-instance/field-info/card-group-info/card-group-info.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/_component/game-instance/field-info/card-group-info/card-group-info.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/_component/game-instance/field-info/field-info/field-info.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/_component/game-instance/field-info/field-info/field-info.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/_component/game-instance/field-info/field-info/field-info.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/_component/game-instance/field-info/field-info/field-info.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/_component/game-instance/field-info/player-info/player-info.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/_component/game-instance/field-info/player-info/player-info.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/_component/game-instance/field-info/town-info/town-info.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/_component/game-instance/field-info/town-info/town-info.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/_component/game-instance/field-info/town-info/town-info.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/_component/game-instance/field-info/town-info/town-info.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/_component/game-instance/field-info/utility-info/utility-info.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/_component/game-instance/field-info/utility-info/utility-info.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/_component/game-instance/field-info/utility-info/utility-info.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/_component/game-instance/field-info/utility-info/utility-info.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/_component/game-instance/transaction/offer/transaction-add/new-discount-form.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/_component/game-instance/transaction/offer/transaction-add/new-discount-form.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/_component/game-instance/transaction/offer/transaction-add/transaction-add.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/_component/game-instance/transaction/offer/transaction-add/transaction-add.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/_component/game-instance/transaction/offer/transaction-remove/transaction-remove.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/_component/game-instance/transaction/offer/transaction-remove/transaction-remove.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/_component/game-instance/transaction/offer/transaction-remove/transaction-remove.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/_component/game-instance/transaction/offer/transaction-remove/transaction-remove.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/_component/game-instance/transaction/offer/transferable-item/transferable-item.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/_component/game-instance/transaction/offer/transferable-item/transferable-item.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/_component/game-instance/transaction/offer/transferable-item/transferable-item.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/_component/game-instance/transaction/offer/transferable-item/transferable-item.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/_component/game-instance/transaction/start-transaction/start-transaction.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/_component/game-instance/transaction/start-transaction/start-transaction.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/_component/game-instance/transaction/transaction-status/transaction-status.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/_component/game-instance/transaction/transaction-status/transaction-status.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/_model/instance/interfaces/Chargeable.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/_model/instance/interfaces/Chargeable.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/_model/instance/interfaces/Transferable.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/_model/instance/interfaces/Transferable.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/_model/instance/properties/CardGroup.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/_model/instance/properties/CardGroup.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/_model/instance/properties/transferable/Discount.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/_model/instance/properties/transferable/Discount.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/_model/instance/properties/transferable/Utility.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/_model/instance/properties/transferable/Utility.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/_model/response/builder/player-action/PlayerLeaveResponseBuilder.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/_model/response/builder/player-action/PlayerLeaveResponseBuilder.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/_model/response/response/player/PlayerLeaveResponse.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/_model/response/response/player/PlayerLeaveResponse.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/_service/game/chat/property.directive.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/_service/game/chat/property.directive.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/_service/game/game/game.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/_service/game/game/game.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/_service/request/game-action/game-action.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/_service/request/game-action/game-action.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/_service/request/request/request.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/_service/request/request/request.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/_service/response/player-action/player-action-response.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/_service/response/player-action/player-action-response.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/_service/utils/rest-api/rest-api.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/_service/utils/rest-api/rest-api.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/my-rx-stomp.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/my-rx-stomp.config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/environments/environment.prod.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/environments/environment.prod.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/environments/environment.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/environments/environment.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles.css" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/dist/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
+    <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -11,168 +74,191 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5">
-      <split-first>
-        <leaf>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/app/app.module.ts">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="465">
-                  <caret line="31" column="18" selection-start-line="31" selection-start-column="18" selection-end-line="31" selection-end-column="18" />
-                  <folding>
-                    <element signature="e#0#58#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/app/_component/game-instance/game/game.component.ts">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="300">
-                  <caret line="36" column="52" selection-start-line="36" selection-start-column="52" selection-end-line="36" selection-end-column="52" />
-                  <folding>
-                    <element signature="e#0#55#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/app/_component/game-instance/field/town-field/town-field.component.ts">
-              <provider selected="true" editor-type-id="text-editor">
-                <state>
-                  <folding>
-                    <element signature="e#0#55#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/app/_component/game-instance/field/field/field.component.ts">
-              <provider selected="true" editor-type-id="text-editor">
-                <state>
-                  <folding>
-                    <element signature="e#0#55#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/app/_component/game-instance/field/card-field/card-field.component.ts">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="120">
-                  <caret line="8" column="39" selection-start-line="8" selection-start-column="39" selection-end-line="8" selection-end-column="39" />
-                  <folding>
-                    <element signature="e#0#55#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/app/_component/game-instance/board/board.component.ts">
-              <provider selected="true" editor-type-id="text-editor">
-                <state>
-                  <folding>
-                    <element signature="e#0#55#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/app/_component/game-instance/actions-menu/actions-menu.component.ts">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="60">
-                  <caret line="4" column="21" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="21" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-first>
-      <split-second>
-        <leaf>
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/app/_component/game-instance/actions-menu/actions-menu.component.ts">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="60">
-                  <caret line="4" column="21" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="21" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-second>
-    </splitter>
+    <leaf>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/styles.css">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/styles/fields.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="8" column="1" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../Monopol-Server/src/main/java/org/california/monopolserver/model/ws_message/response/player/PlayerLeaveResponse.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="15" column="27" selection-start-line="15" selection-start-column="27" selection-end-line="15" selection-end-column="27" />
+              <folding>
+                <element signature="e#772#773#0" expanded="true" />
+                <element signature="e#830#831#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../Monopol-Server/src/main/java/org/california/monopolserver/service/action/PlayerLeaveService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="397">
+              <caret line="58" column="31" selection-start-line="58" selection-start-column="31" selection-end-line="58" selection-end-column="31" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/_service/game/game/game.service.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <folding>
+                <element signature="e#0#41#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/_service/response/game-action/game-action-response.service.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <folding>
+                <element signature="e#0#41#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/_service/response/player-action/player-action-response.service.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="538">
+              <caret line="45" column="49" selection-start-line="45" selection-start-column="49" selection-end-line="45" selection-end-column="49" />
+              <folding>
+                <element signature="e#0#41#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/_model/response/response/player/PlayerLeaveResponse.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="105">
+              <caret line="7" column="11" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/app/_model/response/builder/player-action/PlayerLeaveResponseBuilder.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/css-test/board/fields-row.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="8" column="29" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
+              <folding>
+                <element signature="n#div#0;n#body#0;n#html#0;n#!!top" />
+                <element signature="n#div#1;n#body#0;n#html#0;n#!!top" />
+                <element signature="n#div#2;n#body#0;n#html#0;n#!!top" />
+                <element signature="n#div#3;n#body#0;n#html#0;n#!!top" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>transactio</find>
+      <find>fields-row</find>
+      <find>shadow</find>
+      <find>shadow-radi</find>
+    </findStrings>
   </component>
   <component name="Git.Settings">
-    <option name="PREVIOUS_COMMIT_AUTHORS">
-      <list>
-        <option value="Kamil &lt;kamil.gawel.aplikacje@gmail.com&gt;" />
-      </list>
-    </option>
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/app/_component/game-instance/field/card-field/card-field.component.ts" />
-        <option value="$PROJECT_DIR$/src/app/app.module.ts" />
-        <option value="$PROJECT_DIR$/src/app/_component/game-instance/game/game.component.ts" />
+        <option value="$PROJECT_DIR$/src/styles/transaction.css" />
+        <option value="$PROJECT_DIR$/src/styles/utils.css" />
+        <option value="$PROJECT_DIR$/src/styles/utils/hover.css" />
+        <option value="$PROJECT_DIR$/src/css-test/transaction/transaction.html" />
+        <option value="$PROJECT_DIR$/src/css-test/board/fields-row.html" />
+        <option value="$PROJECT_DIR$/src/styles/fields.css" />
+        <option value="$PROJECT_DIR$/../Monopol-Server/src/main/java/org/california/monopolserver/model/ws_message/response/player/PlayerLeaveResponse.java" />
+        <option value="$PROJECT_DIR$/../Monopol-Server/src/main/java/org/california/monopolserver/service/action/PlayerLeaveService.java" />
+        <option value="$PROJECT_DIR$/src/app/_service/response/player-action/player-action-response.service.ts" />
+        <option value="$PROJECT_DIR$/src/app/_model/response/response/player/PlayerLeaveResponse.ts" />
+        <option value="$PROJECT_DIR$/src/app/_model/response/builder/player-action/PlayerLeaveResponseBuilder.ts" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="331" />
-    <option name="y" value="9" />
-    <option name="width" value="1390" />
-    <option name="height" value="998" />
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER">
+    <package-json value="$PROJECT_DIR$/package.json" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="NodeModulesDirectoryManager">
+    <handled-path value="$PROJECT_DIR$/node_modules" />
+  </component>
+  <component name="NodePackageJsonFileManager">
+    <packageJsonPaths>
+      <path value="$PROJECT_DIR$/package.json" />
+    </packageJsonPaths>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="38" />
+    <option name="y" value="34" />
+    <option name="width" value="1400" />
+    <option name="height" value="1000" />
+  </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="Monopol-Front" type="b2602c69:ProjectViewProjectNode" />
-              <item name=".mvn" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Monopol-Front" type="b2602c69:ProjectViewProjectNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Monopol-Front" type="b2602c69:ProjectViewProjectNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="SearchEverywhereHistoryKey" value="PlayerLeaveResponse&#9;null&#9;null" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1560175737884" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../Monopol-Server" />
-    <property name="node.js.detected.package.tslint" value="true" />
-    <property name="node.js.path.for.package.tslint" value="project" />
-    <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
-    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
     <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
   </component>
   <component name="RunDashboard">
@@ -187,77 +273,54 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="npm.Angular CLI Server">
-    <configuration name="E2E Tests" type="JavaScriptTestRunnerProtractor">
-      <config-file value="$PROJECT_DIR$/e2e/protractor.conf.js" />
-      <node-interpreter value="project" />
-      <protractor-options value="" />
-      <envs />
-      <scope-kind value="ALL" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Angular Application" type="JavascriptDebugType" uri="http://localhost:4200">
-      <method v="2" />
-    </configuration>
-    <configuration name="Angular CLI Server" type="js.build_tools.npm">
-      <package-json value="$PROJECT_DIR$/package.json" />
-      <command value="run" />
-      <scripts>
-        <script value="start" />
-      </scripts>
-      <node-interpreter value="project" />
-      <envs />
-      <method v="2" />
-    </configuration>
-  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="716f6200-f55d-4381-9859-23c900a36fb2" name="Default Changelist" comment="" />
-      <created>1558685090047</created>
+      <changelist id="c379e23e-7309-4eb4-9ef7-633121b77de6" name="Default Changelist" comment="" />
+      <created>1560156487870</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1558685090047</updated>
-      <workItem from="1558685091290" duration="1471000" />
+      <updated>1560156487870</updated>
+      <workItem from="1560156492137" duration="17371000" />
     </task>
-    <task id="LOCAL-00001" summary="First commit">
-      <created>1558685383454</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1558685383454</updated>
-    </task>
-    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1471000" />
+    <option name="totallyTimeSpent" value="17371000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1" y="27" width="1922" height="1053" extended-state="6" />
+    <frame x="38" y="34" width="1400" height="1000" extended-state="0" />
     <layout>
       <window_info id="Designer" />
+      <window_info id="Image Layers" />
+      <window_info id="UI Designer" />
       <window_info id="Favorites" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2497332" />
+      <window_info id="Capture Tool" />
+      <window_info id="npm" side_tool="true" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="TypeScript" />
-      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Database Changes" />
-      <window_info anchor="bottom" id="Version Control" sideWeight="0.4994664" weight="0.32903227" />
-      <window_info anchor="bottom" id="Terminal" visible="true" weight="0.32903227" />
-      <window_info anchor="bottom" id="Event Log" sideWeight="0.50053364" side_tool="true" weight="0.32903227" />
+      <window_info anchor="bottom" id="Spring" />
+      <window_info anchor="bottom" id="TypeScript" weight="0.32990867" />
+      <window_info anchor="bottom" id="Terminal" />
+      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32990867" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="right" id="Maven" />
-      <window_info anchor="right" id="Palette&#9;" />
+      <window_info anchor="right" id="Palette" />
+      <window_info anchor="right" id="Capture Analysis" />
+      <window_info anchor="right" id="Maven Projects" />
       <window_info anchor="right" id="Database" />
+      <window_info anchor="right" id="Palette&#9;" />
+      <window_info anchor="right" id="Theme Preview" />
+      <window_info anchor="right" id="Bean Validation" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -266,103 +329,210 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State>
-              <option name="RECENTLY_FILTERED_USER_GROUPS">
-                <collection />
-              </option>
-              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
-                <collection />
-              </option>
-              <option name="COLUMN_ORDER">
-                <list>
-                  <option value="0" />
-                  <option value="1" />
-                  <option value="2" />
-                  <option value="3" />
-                </list>
-              </option>
-            </State>
-          </value>
-        </entry>
-      </map>
-    </option>
-  </component>
-  <component name="VcsManagerConfiguration">
-    <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
-    <MESSAGE value="First commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="First commit" />
-    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
-    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/app/_component/game-instance/actions-menu/actions-menu.component.ts">
+    <entry file="file://$PROJECT_DIR$/src/styles/utils.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="21" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="21" />
+        <state relative-caret-position="360">
+          <caret line="24" selection-start-line="24" selection-end-line="24" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/_component/game-instance/board/board.component.ts">
+    <entry file="file://$PROJECT_DIR$/src/styles/transaction.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
+        <state relative-caret-position="598">
+          <caret line="107" column="15" selection-start-line="107" selection-start-column="15" selection-end-line="107" selection-end-column="15" />
           <folding>
-            <element signature="e#0#55#0" expanded="true" />
+            <element signature="e#19#130#0" />
+            <element signature="e#143#151#0" />
+            <element signature="e#186#194#0" />
+            <element signature="e#249#257#0" />
+            <element signature="e#427#435#0" />
+            <element signature="e#509#517#0" />
+            <element signature="e#814#822#0" />
+            <element signature="e#1004#1012#0" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/_component/game-instance/field/card-field/card-field.component.ts">
+    <entry file="file://$PROJECT_DIR$/src/styles/utils/hover.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="2554" column="16" selection-start-line="2554" selection-start-column="5" selection-end-line="2554" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/css-test/transaction/transaction.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="11" selection-start-line="6" selection-start-column="11" selection-end-line="6" selection-end-column="11" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/styles.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/css-test/board/fields-row.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
-          <caret line="8" column="39" selection-start-line="8" selection-start-column="39" selection-end-line="8" selection-end-column="39" />
+          <caret line="8" column="29" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
           <folding>
-            <element signature="e#0#55#0" expanded="true" />
+            <element signature="n#div#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#div#1;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#div#2;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#div#3;n#body#0;n#html#0;n#!!top" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/_component/game-instance/field/field/field.component.ts">
+    <entry file="file://$PROJECT_DIR$/src/styles/fields.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="1" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../Monopol-Server/src/main/java/org/california/monopolserver/model/ws_message/response/player/PlayerLeaveResponse.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="15" column="27" selection-start-line="15" selection-start-column="27" selection-end-line="15" selection-end-column="27" />
+          <folding>
+            <element signature="e#772#773#0" expanded="true" />
+            <element signature="e#830#831#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../Monopol-Server/src/main/java/org/california/monopolserver/service/action/PlayerLeaveService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="397">
+          <caret line="58" column="31" selection-start-line="58" selection-start-column="31" selection-end-line="58" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/_service/game/game/game.service.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <folding>
-            <element signature="e#0#55#0" expanded="true" />
+            <element signature="e#0#41#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/_component/game-instance/field/town-field/town-field.component.ts">
+    <entry file="file://$PROJECT_DIR$/src/app/_service/response/game-action/game-action-response.service.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <folding>
-            <element signature="e#0#55#0" expanded="true" />
+            <element signature="e#0#41#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/app.module.ts">
+    <entry file="file://$PROJECT_DIR$/src/app/_service/response/player-action/player-action-response.service.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="31" column="18" selection-start-line="31" selection-start-column="18" selection-end-line="31" selection-end-column="18" />
+        <state relative-caret-position="538">
+          <caret line="45" column="49" selection-start-line="45" selection-start-column="49" selection-end-line="45" selection-end-column="49" />
           <folding>
-            <element signature="e#0#58#0" expanded="true" />
+            <element signature="e#0#41#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/_component/game-instance/game/game.component.ts">
+    <entry file="file://$PROJECT_DIR$/src/app/_model/response/response/player/PlayerLeaveResponse.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="36" column="52" selection-start-line="36" selection-start-column="52" selection-end-line="36" selection-end-column="52" />
-          <folding>
-            <element signature="e#0#55#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="105">
+          <caret line="7" column="11" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/_model/response/builder/player-action/PlayerLeaveResponseBuilder.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>No facets are configured</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>11</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>.mvn</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>lib</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
   </component>
 </project>

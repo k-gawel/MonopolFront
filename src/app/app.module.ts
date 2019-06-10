@@ -41,16 +41,16 @@ import {
     TransactionAddComponent
 } from './_component/game-instance/transaction/offer/transaction-add/transaction-add.component';
 import {TransferableItemComponent} from './_component/game-instance/transaction/offer/transferable-item/transferable-item.component'
-import {TransactionRemoveComponent} from "./_component/game-instance/transaction/offer/transaction-remove/transaction-remove.component";
 import {FirstRowComponent} from './_component/game-instance/transaction/offer/first-row/first-row.component';
 import {OfferComponent} from "./_component/game-instance/transaction/offer/offer/offer.component";
 import {StartTransactionComponent} from './_component/game-instance/transaction/start-transaction/start-transaction.component';
 import {TransactionComponent} from './_component/game-instance/transaction/transaction/transaction.component';
 import { TransactionStatusComponent } from './_component/game-instance/transaction/transaction-status/transaction-status.component';
-import { PropertyDirective } from './_service/game/chat/property.directive';
+import { PropertyDirective } from './_service/game/field-info/property.directive';
 import { ChatMessageComponent } from './_component/game-instance/chat/chat-message/chat-message.component';
 import { PlayerInfoComponent } from './_component/game-instance/field-info/player-info/player-info.component';
 import {AngularFontAwesomeModule} from "angular-font-awesome";
+import { PlayersListComponent } from './_component/game-instance/field-info/players-list/players-list.component';
 
 @NgModule({
   declarations: [
@@ -70,10 +70,8 @@ import {AngularFontAwesomeModule} from "angular-font-awesome";
     TransactionContainerComponent,
     ChatWindowComponent,
     TransactionAddComponent,
-    TransactionRemoveComponent,
     OfferComponent,
     TransferableItemComponent,
-    TransactionRemoveComponent,
     FirstRowComponent,
     OfferComponent,
     StartTransactionComponent,
@@ -83,7 +81,8 @@ import {AngularFontAwesomeModule} from "angular-font-awesome";
     ChatMessageComponent,
     NewDiscountForm,
     PlayerInfoComponent,
-    NewImprovementForm
+    NewImprovementForm,
+    PlayersListComponent
   ],
     imports: [
         BrowserModule,

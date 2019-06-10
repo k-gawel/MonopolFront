@@ -45,11 +45,15 @@
             <mat-panel-description>{{player.properties.getDiscounts().length}}</mat-panel-description>
         </mat-expansion-panel-header>
 
-        <mat-list>
-            <mat-list-item *ngFor="let t of player.properties.getDiscounts()" style="">
-                {{t.toString()}}
-            </mat-list-item>
-        </mat-list>
+      <mat-list>
+        <mat-list-item *ngFor="let d of player.properties.getDiscounts()">
+          <p mat-line appProperty [property]="d.chargeable"></p>
+          <p mat-line style="display: flex; justify-content: space-between">
+            <span>{{d.getValueString()}}</span> <span>{{d.endTour}}</span>
+          </p>
+        </mat-list-item>
+      </mat-list>
+
     </mat-expansion-panel>
 
   </mat-accordion>

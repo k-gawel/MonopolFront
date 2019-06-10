@@ -3,6 +3,7 @@ import {AbstractInstance, InstancesList} from "../utils/AbstractInstance";
 export class CardGroup extends AbstractInstance {
 
   cardName: string;
+  description: string;
 
   constructor(uuid: string) {
     super(uuid);
@@ -20,6 +21,7 @@ export class CardGroup extends AbstractInstance {
     result = result == null ? new CardGroup(json['uuid']) : result;
 
     result.cardName = json['name'];
+    result.description = json['description'];
 
     return result;
   }

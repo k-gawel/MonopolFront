@@ -20,14 +20,14 @@ export abstract class Discount extends AbstractTransferable implements Transfera
   static ALL: InstancesList<Discount> = new InstancesList();
 
   static get(ref: JSON | string): Discount {
-    if(typeof ref === 'string')
+    if (typeof ref === 'string')
       return this.ALL.getByUUID(ref);
 
-    let json: JSON = <JSON> ref;
+    let json: JSON = <JSON>ref;
     let result: Discount = this.ALL.getByUUID(json['uuid']);
     let type = json['type'];
     let chargeableType = json['chargeable_type'];
-    if(result == null)
+    if (result == null)
       result = type === 'fixed' ?
         new FixedDiscount(json['uuid']) : new PercentageDiscount(json['uuid']);
 
@@ -42,6 +42,8 @@ export abstract class Discount extends AbstractTransferable implements Transfera
   }
 
   abstract setValue(value: number);
+
+  abstract getValueString(): string;
 
   getBasicPrice(): Money {
     return new Money();
@@ -61,8 +63,8 @@ export abstract class Discount extends AbstractTransferable implements Transfera
     receiver.properties.push(this);
   }
 
-
 }
+
 
 
 export class PercentageDiscount extends Discount {
@@ -73,24 +75,18 @@ export class PercentageDiscount extends Discount {
     this.percentageDiscount = value;
   }
 
-  getValueString() {
+  getValueString(): string {
     return this.percentageDiscount + "%";
   }
 
-  toString() {
+  toString(): string {
     return this.getValueString() + " | " + this.chargeable.name + " | " + this.endTour;
   }
 
-  public static instanceOf(o: any): boolean {
-    if(o == undefined)
-      return false;
 
-    let d: PercentageDiscount = <PercentageDiscount> o;
-
-    return d.percentageDiscount !== undefined;
-  }
 
 }
+
 
 
 export class FixedDiscount extends Discount {
@@ -101,7 +97,7 @@ export class FixedDiscount extends Discount {
     this.fixedPrice = value;
   }
 
-  getValueString() {
+  getValueString(): string {
     return "$" + this.fixedPrice;
   }
 

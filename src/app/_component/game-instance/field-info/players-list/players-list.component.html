@@ -1,0 +1,11 @@
+<mat-toolbar color="primary" style="height: 20%; display: flex; width: 100%; padding: 0 5px">
+  <div>
+    <mat-card-title>PLAYERS</mat-card-title>
+  </div>
+</mat-toolbar>
+
+<mat-divider></mat-divider>
+
+<mat-action-list>
+  <button mat-list-item *ngFor="let p of getPlayers()" (click)="select(p)">{{p.toString()}}</button>
+</mat-action-list>

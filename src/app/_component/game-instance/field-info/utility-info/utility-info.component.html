@@ -40,12 +40,14 @@
       </mat-panel-title>
     </mat-expansion-panel-header>
 
-    <mat-action-list *ngFor="let p of getPlayers()"  style="">
-      <button (click)="select(p)" mat-list-item *ngIf="p.properties.getDiscount(utility) != null" style="height: 16.6666%; display: flex; justify-content: space-between">
-        <span>{{p.name}}</span>
-        <span>{{p.properties.getDiscount(utility).toString()}}</span>
-      </button>
-    </mat-action-list>
+    <mat-list>
+      <mat-list-item *ngFor="let d of discounts">
+        <p mat-line appProperty [property]="d.getOwner()"></p>
+        <p mat-line style="display: flex; justify-content: space-between">
+          <span>{{d.getValueString()}}</span> <span>{{d.endTour}}</span>
+        </p>
+      </mat-list-item>
+    </mat-list>
 
   </mat-expansion-panel>
 

@@ -15,7 +15,6 @@ export class ChatMessageComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.messageArray.forEach(m => {console.log(m, this.isInstance(m), this.isString(m))})
   }
 
   isInstance(m: any): boolean {

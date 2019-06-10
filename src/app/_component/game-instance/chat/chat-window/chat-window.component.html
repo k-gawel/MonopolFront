@@ -1,11 +1,12 @@
-<mat-toolbar color="primary" style="height: 15%;">
-    <span *ngIf="currentTour != null">TOUR: {{currentTour.index + ' ' + currentTour.player.name}}</span>
+<mat-toolbar color="primary" style="height: 15%; align-content: center">
+    <span *ngIf="currentTour != null" style="display: flex; justify-content: space-between; width: 100%">
+        <span>TOUR: {{currentTour.index}}</span>
+        <span>{{currentTour.player.name}}</span>
+    </span>
     <span *ngIf="currentTour == null">GAME DIDN'T STARTED YET</span>
-    <fa name="cog" animation="spin"></fa>
-    <i class="fa fa-apple"></i>
 </mat-toolbar>
 
-<div style="height: 70%; background-color: white; overflow-y: scroll">
+<div #chatContainer style="height: 70%; background-color: white; overflow-y: scroll">
   <app-chat-message *ngFor="let m of messagesarray" [messageArray]="m"></app-chat-message>
 </div>
 

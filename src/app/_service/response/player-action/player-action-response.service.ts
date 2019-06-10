@@ -8,6 +8,7 @@ import {PlayerActionResponse} from "../../../_model/response/response/player/Pla
 import {stringify} from "querystring";
 import {GameService} from "../../game/game/game.service";
 import {InfoCardService} from "../../game/field-info/info-card.service";
+import {buildOptimizerLoader} from "@angular-devkit/build-angular/src/angular-cli-files/models/webpack-configs";
 
 @Injectable({
   providedIn: 'root'
@@ -16,6 +17,7 @@ export class PlayerActionResponseService {
 
   constructor(private gameService: GameService,
               private infoService: InfoCardService) { }
+
 
   public receiveMessage(message: PlayerActionResponse) {
     if(message instanceof PlayerMoveResponse)
@@ -26,6 +28,7 @@ export class PlayerActionResponseService {
       throw new Error("Wrong player action type " + stringify(message));
   }
 
+
   move(message: PlayerMoveResponse) {
     let player: Player = Player.get(message.playerUuid);
     let board: Board = this.gameService.$board.value;
@@ -35,11 +38,22 @@ export class PlayerActionResponseService {
     board.movePlayer(player, destination);
   }
 
-  leave(message: PlayerLeaveResponse) {
-    let player: Player = Player.get(message.playerUuid);
-    let board: Board = this.gameService.$board.value;
 
-    board.removePlayer(player);
+  leave(message: PlayerLeaveResponse) {
+    let player: Player   = Player.get(message.playerUuid);
+    let newAdmin: Player = Player.get(message.new_admin);
+    let winner: Player   = Player.get(message.winner);
+    let loser:  Player   = Player.get(message.loser)
+    let aborted: boolean = message.aborted;
+
+    if(aborted)
+      this.gameService.abortGame(winner);
+    else {
+      Player.ADMIN = newAdmin != null ? newAdmin.uuid : Player.ADMIN;
+      Player.ALL.remove(player);
+      this.gameService.$board.value.removePlayer(player);
+    }
+
   }
 
 }

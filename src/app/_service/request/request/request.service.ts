@@ -22,6 +22,7 @@ export class RequestService {
   }
 
 
+
   getList(): Promise<GameLink[]> {
     return this.restService.getList()
         .then((json: JSON[]) => json.map(j => new GameLink(j)));
