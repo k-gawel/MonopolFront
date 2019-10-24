@@ -16,9 +16,7 @@ export class CardFieldComponent implements OnInit {
   }
 
   getIcon(): string {
-
     let uppName = this.card.cardName.toUpperCase();
-
     if(uppName.includes("CHANCE"))
       return 'chance';
     else if(uppName.includes("JAIL"))

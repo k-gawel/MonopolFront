@@ -1,20 +1,21 @@
 import {AbstractInstance, InstancesList} from "../instance/utils/AbstractInstance";
-import {Player} from "../instance/Player";
+import {Bank, Player} from "../instance/Player";
 import {Town} from "../instance/properties/transferable/Town";
 import {Utility} from "../instance/properties/transferable/Utility";
 import {CardGroup} from "../instance/properties/CardGroup";
+import {RGBColor} from "../utils/RGBColor";
 
 export abstract class Field extends AbstractInstance {
 
   index: number;
-  players: InstancesList<Player> = new InstancesList();
+  players: InstancesList<Player> = new InstancesList<Player>();
 
   constructor(uuid: string) {
     super(uuid);
     Field.ALL.push(this);
   }
 
-  static ALL: InstancesList<Field> = new InstancesList();
+  static ALL: InstancesList<Field> = new InstancesList<Field>();
 
   static get(ref: JSON | string): Field {
     if(typeof ref === 'string')
@@ -53,6 +54,11 @@ export abstract class Field extends AbstractInstance {
     this.players.remove(p);
   }
 
+  abstract get color(): RGBColor;
+
+  abstract get name(): string;
+
+  abstract get owner(): Player;
 
   toString(): string {
     return "FIELD " + this.index + ": " + this.getProperty().toString();
@@ -62,13 +68,13 @@ export abstract class Field extends AbstractInstance {
 
 export class TownField extends Field {
 
-  town: Town;
+    town: Town;
 
-  getProperty(): Town {
+    getProperty(): Town {
     return this.town;
-  }
+    }
 
-  static get(ref: JSON | string ): TownField {
+    static get(ref: JSON | string ): TownField {
     if(typeof ref === 'string')
       return <TownField> this.ALL.getByUUID(ref);
 
@@ -78,31 +84,54 @@ export class TownField extends Field {
 
     result.town = Town.get(json['landable']);
     return result;
-  }
+    }
 
+    get name(): string {
+      return this.town.name;
+    }
+
+    get owner(): Player {
+      return this.town.owner;
+    }
+
+    get color(): RGBColor {
+        return this.town.color;
+    }
 
 
 }
 
 export class UtilityField extends Field {
 
-  utility: Utility;
+      utility: Utility;
 
-  getProperty(): Utility {
-    return this.utility;
-  }
+      getProperty(): Utility {
+        return this.utility;
+      }
 
-  static get(ref: JSON | string): UtilityField {
-    if(typeof ref === 'string')
-      return <UtilityField> this.ALL.getByUUID(ref);
+      static get(ref: JSON | string): UtilityField {
+        if(typeof ref === 'string')
+          return <UtilityField> this.ALL.getByUUID(ref);
 
-    let json: JSON = <JSON> ref;
-    let result: UtilityField = <UtilityField> this.ALL.getByUUID(json['uuid']);
-    result = result == null ? new UtilityField(json['uuid']) : result;
+        let json: JSON = <JSON> ref;
+        let result: UtilityField = <UtilityField> this.ALL.getByUUID(json['uuid']);
+        result = result == null ? new UtilityField(json['uuid']) : result;
 
-    result.utility = Utility.get(json['landable']);
-    return result;
-  }
+        result.utility = Utility.get(json['landable']);
+        return result;
+      }
+
+      get name(): string {
+        return this.utility.name;
+      }
+
+      get owner(): Player {
+        return this.utility.owner;
+      }
+
+      get color(): RGBColor {
+          return this.utility.color;
+      }
 
 
 
@@ -127,6 +156,19 @@ export class CardGroupField extends Field {
     result.cardGroup = CardGroup.get(json['landable']);
     return result;
   }
+
+  get name(): string {
+    return this.cardGroup.cardName;
+  }
+
+  get owner(): Player {
+    return Bank.get();
+  }
+
+    get color(): RGBColor {
+        return this.cardGroup.color;
+    }
+
 
 
 

@@ -1,4 +1,4 @@
-<p style="margin: 7px">
+<p style="margin: 1rem">
   <span *ngFor="let m of messageArray">
     <span *ngIf="isInstance(m)" appProperty [property]="m">X</span>
     <span *ngIf="isString(m)">{{m}}</span>

@@ -2,14 +2,14 @@ import {Injectable} from '@angular/core';
 import {HttpClient, HttpParams} from "@angular/common/http";
 import {environment} from "../../../../environments/environment";
 
-console.log("REST URL: ",  "http://" + location.host + location.pathname);
+console.log("REST URL: ",  "http://" +  window.location.hostname + ":8080/monopol-server-0.0.2/");
 
 @Injectable({
   providedIn: 'root'
 })
 export class RestApiService {
 
-  private url: string = "http://" + location.host + location.pathname;
+  private url: string = "http://" + window.location.hostname + ":8080/monopol-server-0.0.2/";
 
   constructor(private http: HttpClient) { }
 

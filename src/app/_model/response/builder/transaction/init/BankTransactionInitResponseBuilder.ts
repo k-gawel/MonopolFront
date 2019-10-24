@@ -2,7 +2,6 @@ import {BankTransactionInitResponse} from "../../../response/transaction/init/Ba
 
 export class BankTransactionInitResponseBuilder {
 
-
     static get(json: JSON) {
         return new BankTransactionInitResponse();
     }

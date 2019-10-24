@@ -19,12 +19,17 @@ export class TransactionStatusComponent implements OnInit {
               private requestService: TransactionRequestService) { }
 
   @Input() transaction: Transaction;
+  @Input() status: boolean;
 
   ngOnInit() {
   }
 
-  setStatus(status: boolean) {
-    return this.requestService.setStatus(status);
+  isEmpty(): boolean {
+    return this.transaction == null;
+  }
+
+  setStatus() {
+    return this.requestService.setStatus(this.status);
   }
 
   isInitiator(): boolean {

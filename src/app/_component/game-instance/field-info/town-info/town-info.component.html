@@ -1,22 +1,40 @@
-  <mat-toolbar color="primary" style="height: 20%; display: flex; width: 100%; padding: 0 5px">
+<div class="field-info-header">
 
-    <button mat-icon-button (click)="back()">
-      <mat-icon>keyboard_return</mat-icon>
-    </button>
+  <button mat-icon-button (click)="back()">
+    <mat-icon>keyboard_return</mat-icon>
+  </button>
 
-    <div class="mat" style="margin: 0; width: calc(100% - 40px)">
-      <div class="mat-card-title" style="width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap">
-        {{town.name}}
-      </div>
-      <div class="mat-card-subtitle" style="display: flex; justify-content: space-between">
-        <span [ngStyle]="{'color': town.region.color}">{{town.region.name}}</span>
-        <span>{{town.owner.name}}</span>
-        <span>{{town.getBasicPrice().toString()}}</span>
-      </div>
-    </div>
-  </mat-toolbar>
+  <span class="field-info-title">
+    {{town.name}}
+  </span>
+
+</div>
+
+<div class="info-body">
 
   <mat-accordion>
+
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          DETAILS
+        </mat-panel-title>
+
+      </mat-expansion-panel-header>
+
+      <div class="town-info">
+        <p class="town-info-row">
+          REGION: {{town.region.name}}
+        </p>
+        <p class="town-info-row">
+          OWNER: {{town.owner.name}}
+        </p>
+        <p class="town-info-row">
+          HOUSE COST: 123.dollar
+        </p>
+      </div>
+
+    </mat-expansion-panel>
 
     <mat-expansion-panel>
       <mat-expansion-panel-header>
@@ -26,7 +44,7 @@
       </mat-expansion-panel-header>
 
       <div *ngFor="let i of [0,1,2,3,4,5]"  style="height: 16.6666%; display: flex; justify-content: space-between">
-        <span>IMRPOVEMENTS: {{i}}</span>
+        <span>{{i}} X <i class="fas fa-home"></i></span>
         <span>{{town.chargeOf(i).toString()}}</span>
       </div>
 
@@ -50,3 +68,4 @@
 
   </mat-accordion>
 
+</div>

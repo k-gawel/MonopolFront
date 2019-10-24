@@ -17,8 +17,7 @@ export class StartTransactionComponent implements OnInit {
   }
 
   getPlayers(): Player[] {
-    return  Player.ALL.toArray()
-        .filter(p => !p.equals(this.sessionService.getPlayer()))
+    return  Player.ACTIVE.array.filter(p => !p.equals(this.sessionService.getPlayer()))
   }
 
   initTransaction(player: Player) {

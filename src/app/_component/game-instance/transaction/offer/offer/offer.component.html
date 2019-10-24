@@ -1,6 +1,14 @@
-<app-first-row [transaction]="transaction" (add)="add = $event" [side]="side" style="height: 15%"></app-first-row>
+<div class="offer-header">
+    <button class="offer-header-button" mat-icon-button (click)="add = !add">
+        <mat-icon> {{add ? 'keyboard_return' : 'add_circle_outline' }} </mat-icon>
+    </button>
 
-<mat-action-list style="height: 80%; overflow-y: scroll" >
+    <span>
+      {{side.name}}
+    </span>
+</div>
+
+<mat-action-list class="offer-items">
 
     <app-transaction-add [transaction]="transaction" [side]="side" [add]="add"></app-transaction-add>
 

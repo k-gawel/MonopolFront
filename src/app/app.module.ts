@@ -1,4 +1,4 @@
-import {BrowserModule} from '@angular/platform-browser';
+import {BrowserModule, HAMMER_GESTURE_CONFIG, HammerGestureConfig} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 
 import {AppComponent} from './app.component';
@@ -49,7 +49,6 @@ import { TransactionStatusComponent } from './_component/game-instance/transacti
 import { PropertyDirective } from './_service/game/field-info/property.directive';
 import { ChatMessageComponent } from './_component/game-instance/chat/chat-message/chat-message.component';
 import { PlayerInfoComponent } from './_component/game-instance/field-info/player-info/player-info.component';
-import {AngularFontAwesomeModule} from "angular-font-awesome";
 import { PlayersListComponent } from './_component/game-instance/field-info/players-list/players-list.component';
 
 @NgModule({
@@ -85,30 +84,33 @@ import { PlayersListComponent } from './_component/game-instance/field-info/play
     PlayersListComponent
   ],
     imports: [
-        BrowserModule,
-        FormsModule,
-        HttpClientModule,
-        BrowserAnimationsModule,
-        MatButtonModule,
-        MatCheckboxModule,
-        MatBottomSheetModule,
-        MatMenuModule,
-        MatListModule,
-        MatFormFieldModule,
-        MatSliderModule,
-        MatInputModule,
-        MatToolbarModule,
-        MatIconModule,
-        MatSlideToggleModule,
-        MatCardModule,
-        MatTabsModule,
-        MatExpansionModule,
-        MatSelectModule,
-        AngularFontAwesomeModule
+    BrowserModule,
+    FormsModule,
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatCheckboxModule,
+    MatBottomSheetModule,
+    MatMenuModule,
+    MatListModule,
+    MatFormFieldModule,
+    MatSliderModule,
+    MatInputModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatSlideToggleModule,
+    MatCardModule,
+    MatTabsModule,
+    MatExpansionModule,
+    MatSelectModule
     ],
   providers: [
     TransactionResponseService,
     CookieService,
+    {
+      provide: HAMMER_GESTURE_CONFIG,
+      useClass: HammerGestureConfig
+    },
     {
       provide: InjectableRxStompConfig,
       useValue: myRxStompConfig

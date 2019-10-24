@@ -1,0 +1,79 @@
+/*<!--    FONTS AND ICONS-->*/
+.rails:before {
+    
+    content: "\f239";
+}
+
+.power-station:before {
+    
+    content: '\f0eb';
+}
+
+.waterworks:before {
+    
+    content: '\f043';
+}
+
+
+.start:before {
+    
+    content: '\f04b';
+}
+
+.community-chest:before {
+    
+    content: '\f1b2';
+}
+
+.chance:before {
+    
+    content: '\f128';
+}
+
+.income-tax:before {
+    
+    content: '\f155';
+}
+
+.luxury-tax:before {
+    
+    content: '\f219';
+}
+
+.city:before {
+    
+    content: '\f018';
+}
+
+.court:before {
+    
+    content: '\f0e3';
+}
+
+.parking:before {
+    
+    content: '\f540';
+}
+
+.patrol {
+    
+    transform: rotate(-17deg);
+}
+
+.patrol:before {
+    
+    content: '\f5e1';
+}
+
+.town-improvement:before {
+    font-family: "Font Awesome 5 Free";
+    content: '\f015';
+    padding: 0.1rem;
+    font-weight: 900;
+}
+
+.player-pawn:before {
+    content: '\f443';
+    font-weight: 900;
+    font-style: initial;
+}

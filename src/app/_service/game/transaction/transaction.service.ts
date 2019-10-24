@@ -17,10 +17,11 @@ export class TransactionService {
 
   setTransaction(transaction: Transaction) {
     if(this.$transaction.value != null)
-      throw new Error("Canno't initialize before closing other" + transaction + this.$transaction.value);
+      throw new Error("Can't initialize before closing other" + transaction + this.$transaction.value);
 
     this.$transaction.next(transaction);
   }
+
 
   fromJSON(json: JSON) {
     if(json == null) return;
@@ -39,11 +40,10 @@ export class TransactionService {
     this.setTransaction(transaction);
   }
 
+
   fromResponse(response: TransactionInitResponse) {
     let transaction: Transaction = Transaction.get(response);
-
     this.setProperties(transaction, response.operations);
-
     this.setTransaction(transaction);
   }
 
@@ -59,9 +59,11 @@ export class TransactionService {
     })
   }
 
+
   closeTransaction() {
     this.$transaction = null;
   }
+
 
   private setOffers(transaction: Transaction, offer: string[]) {
     let initiator = transaction.getInitiator();

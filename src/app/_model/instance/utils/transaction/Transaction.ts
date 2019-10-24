@@ -23,6 +23,7 @@ export abstract class Transaction extends AbstractInstance {
       && !this.getInitiatorOffer().contains(item)
       && !this.getInvitedOffer().contains(item)};
 
+
   accept(side: Player) {
     if(side.equals(this.getInitiator()))
       this.initiatorStatus = true;

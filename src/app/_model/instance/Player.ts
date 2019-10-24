@@ -9,10 +9,17 @@ export class Player extends AbstractInstance {
   name: string;
   color: string;
   properties: TransferableCollection = new TransferableCollection();
+  status: boolean = true;
 
   constructor(uuid: string) {
     super(uuid);
     Player.ALL.push(this);
+  }
+
+  static get ACTIVE(): InstancesList<Player> {
+    let result = new InstancesList<Player>();
+    this.ALL.array.filter(p => p.status).forEach(p => result.push(p));
+    return result;
   }
 
   static ALL: InstancesList<Player> = new InstancesList();
@@ -26,8 +33,8 @@ export class Player extends AbstractInstance {
   }
 
   static get(ref: string | JSON): Player {
-    if(typeof ref === 'string')
-      return this.ALL.getByUUID(ref);
+    if(ref == null) return null;
+    if(typeof ref === 'string') return this.ALL.getByUUID(ref);
 
     let json: JSON = <JSON> ref;
 
@@ -46,8 +53,6 @@ export class Player extends AbstractInstance {
     return this instanceof Bank;
   }
 
-
-
   public toColoredString(): string {
     return "<span style=\"color: " + this.color + "\">"+ this.name +"</span>";
   }
@@ -63,7 +68,7 @@ export class Bank extends Player {
 
   static get(): Bank {
 
-    return <Bank> Player.ALL.toArray()[0];
+    return <Bank> Player.ALL.array[0];
   }
 
 

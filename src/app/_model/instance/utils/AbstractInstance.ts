@@ -62,7 +62,7 @@ export class InstancesList<T extends Instance> {
     return true;
   }
 
-  public toArray(): T[] {
+  get array(): T[] {
     return this.list;
   }
 

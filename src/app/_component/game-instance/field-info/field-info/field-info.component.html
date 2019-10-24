@@ -1,9 +1,5 @@
-<!--suppress AngularInvalidExpressionResultType -->
-<div style="height: 100%; overflow: scroll">
-    <app-town-info *ngIf="type === 'TOWN'" [town]="instance"></app-town-info>
-    <app-utility-info *ngIf="type === 'UTILITY'" [utility]="instance"></app-utility-info>
-    <app-card-group-info *ngIf="type === 'CARD_GROUP'" [cardGroup]="instance"></app-card-group-info>
-    <app-player-info *ngIf="type === 'PLAYER'" [player]="instance"></app-player-info>
-    <app-players-list *ngIf="type === 'NONE'"></app-players-list>
-
-</div>
+<app-town-info *ngIf="type === 'TOWN'" [town]="instance"></app-town-info>
+<app-utility-info *ngIf="type === 'UTILITY'" [utility]="instance"></app-utility-info>
+<app-card-group-info *ngIf="type === 'CARD_GROUP'" [cardGroup]="instance"></app-card-group-info>
+<app-player-info *ngIf="type === 'PLAYER'" [player]="instance"></app-player-info>
+<app-players-list *ngIf="type === 'NONE'"></app-players-list>

@@ -1,3 +1,21 @@
-<div class="game-table" *ngIf="_board != null">
-  <app-board [board]="_board"></app-board>
+<div *ngIf="_board != null">
+
+  <div class="board">
+    <app-board [board]="_board"></app-board>
+
+    <div class="container-max">
+
+      <app-chat class="chat"></app-chat>
+
+      <app-transaction-container class="transaction"></app-transaction-container>
+
+      <app-field-info class="field-info"></app-field-info>
+
+      <app-actions-menu class="actions"></app-actions-menu>
+
+    </div>
+
+  </div>
+
 </div>
+

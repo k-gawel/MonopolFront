@@ -9,6 +9,7 @@ import {TransactionResponseService} from "../transaction/transaction-response.se
 import {GameActionResponseService} from "../game-action/game-action-response.service";
 import {stringify} from "querystring";
 import {WebSocketService} from "../../utils/web-socket/web-socket.service";
+import {Player} from "../../../_model/instance/Player";
 
 @Injectable({
   providedIn: 'root'

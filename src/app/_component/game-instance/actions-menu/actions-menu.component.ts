@@ -20,14 +20,40 @@ export class ActionsMenuComponent implements OnInit {
   }
 
   getPlayers(): Player[] {
-    return Player.ALL.toArray();
+    return Player.ACTIVE.array;
   }
 
   ngOnInit() {
-    this.gameService.$currentTour.subscribe(t => this.currentTour = t);
+    this.gameService.$currentTour.subscribe(t  => {
+      if(this.currentTour == null) this.startTimer();
+      this.currentTour = t;
+    } );
   }
 
   currentTour: Tour;
+  timeLeft: string;
+
+  get player(): Player {
+    return this.gameService.$currentTour.value.player;
+  }
+
+  getTimeLeft(): string {
+    if(this.currentTour == null)
+      return null;
+    let timeLeft = this.currentTour.endTime.getTime() - new Date().getTime();
+    timeLeft = timeLeft / 1000;
+    if(timeLeft < 0)
+      return "END";
+    let minutes = Math.floor(timeLeft / 60);
+    let seconds = Math.floor(timeLeft % 60);
+    return minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
+  }
+
+  startTimer(): void {
+    setInterval(() => {
+        this.timeLeft = this.getTimeLeft();
+    }, 1000);
+  }
 
   isAdmin() {
     return Player.isAdmin(this.sessionService.getPlayer());
@@ -43,7 +69,7 @@ export class ActionsMenuComponent implements OnInit {
 
   canStartGame(): boolean {
     return this.currentTour == null
-        && Player.ALL.size() > 2
+        && Player.ACTIVE.size() > 2
         && this.isAdmin();
   }
 
@@ -80,5 +106,6 @@ export class ActionsMenuComponent implements OnInit {
   leave() {
     this.playerActionRequestService.leave();
   }
+
 
 }

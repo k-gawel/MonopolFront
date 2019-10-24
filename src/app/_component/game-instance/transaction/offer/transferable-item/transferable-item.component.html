@@ -1,10 +1,14 @@
-<mat-list-item *ngIf="show" >
+<mat-list-item *ngIf="show">
 
   <h3 mat-line>{{name}}</h3>
-  <p mat-line>
-    {{subname}}
+  <p mat-line style="display: flex; justify-content: space-between">
+    <span>
+      {{subname}}
+    </span>
+    <span>
+      {{price}}
+    </span>
   </p>
-  <div>{{price}}</div>
 
   <button mat-icon-button *ngIf="transferable.addProperty() === true" (click)="addItem()">
     <mat-icon>add_box</mat-icon>

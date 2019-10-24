@@ -20,13 +20,19 @@
             "tsConfig": "src/tsconfig.app.json",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
             ],
             "styles": [
               "src/styles.css",
-              "node_modules/font-awesome/css/font-awesome.css"
+              "src/styles/icons.css",
+              "src/styles/fields.css",
+              "src/styles/transaction.css",
+              "src/styles/field-info.css",
+              "src/styles/material-utils.css",
+              "src/fontawesome-free-5.11.2/css/all.css"
             ],
             "scripts": [
+              "src/fontawesome-free-5.11.2/js/all.js",
               "node_modules/jquery/dist/jquery.min.js"
             ],
             "es5BrowserSupport": true
@@ -85,7 +91,8 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": [],
+            "scripts": [
+            ],
             "assets": [
               "src/favicon.ico",
               "src/assets"

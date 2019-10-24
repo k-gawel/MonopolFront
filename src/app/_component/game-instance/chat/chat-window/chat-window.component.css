@@ -1,0 +1,19 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+}
+
+.chat-window {
+    overflow-x: hidden;
+    overflow-y: scroll;
+    flex: 0 1 auto;
+    height: 100%;
+}
+
+.chat-input {
+    flex: 1 1 auto;
+    width: 100%;
+}

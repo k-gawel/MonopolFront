@@ -11,13 +11,4 @@ export class PlayerLeaveResponse extends PlayerActionResponse {
         super("leave");
     }
 
-    static instanceOf(o: any): boolean {
-        if(o === undefined) return false;
-
-        let r: PlayerLeaveResponse = <PlayerLeaveResponse> o;
-
-        return PlayerActionResponse.instanceOf(r)
-            && r.player_action_type === "leave";
-    }
-
 }

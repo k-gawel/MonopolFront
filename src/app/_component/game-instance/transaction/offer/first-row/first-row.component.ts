@@ -5,6 +5,7 @@ import {
   Transaction
 } from "../../../../../_model/instance/utils/transaction/Transaction";
 import {Bank, Player} from "../../../../../_model/instance/Player";
+import {SessionService} from "../../../../../_service/utils/cookies/session-service";
 
 @Component({
   selector: 'app-first-row',
@@ -23,13 +24,13 @@ export class FirstRowComponent implements OnInit {
 
   moneyAmount: number;
 
-  constructor() { }
+  constructor(private sessionService: SessionService) { }
+
+  get isPlayer(): boolean {
+    return this.sessionService.getPlayer().equals(this.side);
+  }
 
   ngOnInit() {
-    if(this.transaction instanceof CompulsoryTransaction) {
-      console.log("COMPULSORY TRANSACTION FIRST ROW", this.transaction );
-      console.log("SIDE", this.side);
-    }
     this.isBankTransaction = this.transaction instanceof BankTransaction;
     this.isBank = this.side instanceof Bank;
   }
@@ -38,10 +39,5 @@ export class FirstRowComponent implements OnInit {
     this._add = !this._add;
     this.add.emit(this._add);
   }
-
-  setMoney() {
-
-  }
-
 
 }

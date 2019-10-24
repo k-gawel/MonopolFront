@@ -1,19 +1,31 @@
-<div>
-  <button class="action-button" *ngIf="canEndTour()" (click)="endTour()">
-    <h3>END TOUR</h3>
-  </button>
+<div class="buttons">
 
-  <button class="action-button" *ngIf="canStartGame()" (click)="endTour()">
-      <h3>START GAME</h3>
-  </button>
+    <div class="first timer" *ngIf="currentTour !=null">
+        <span class="index">TOUR: {{currentTour.index}}</span>
+        <span class="time">{{timeLeft}}</span>
+        <span class="playername">{{player.name}}</span>
+    </div>
 
-  <button class="action-button" *ngIf="canRollDice()" (click)="rollTheDice()">
-      <h3>ROLL THE DICE</h3>
-  </button>
+    <button mat-button class="action-icon third" *ngIf="canStartGame()" (click)="endTour()">
+        <i class="fas fa-gamepad action-icon"></i>
+    </button>
+
+    <div class="second" *ngIf="currentTour != null && currentTour.rolled != null">
+        <span class="disabled-dice"></span>
+        <span class="rolled">{{currentTour.rolled}}</span>
+    </div>
+
+    <button mat-button class="action-icon second" *ngIf="canRollDice()" (click)="rollTheDice()">
+        <i class="fas fa-dice action-icon" (click)="rollTheDice()"></i>
+    </button>
+
+    <button mat-button class="action-icon third" *ngIf="canEndTour()" (click)="endTour()">
+        <i class="fas fa-hourglass-end action-icon"></i>
+    </button>
+
+    <button mat-button class="action-icon fourth" *ngIf="canLeave()" (click)="leave()">
+        <i class="fas fa-sign-out-alt action-icon"></i>
+    </button>
+
 </div>
 
-<div style="top: 50%">
-  <button class="action-button" *ngIf="canLeave()" (click)="leave()">
-      <h3>LEAVE</h3>
-  </button>
-</div>

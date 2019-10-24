@@ -1,0 +1,16 @@
+:host {
+    display: flex;
+    height: 100%;
+    padding: 3rem;
+    box-sizing: border-box;
+}
+
+.start-transaction {
+    width: 2rem;
+    height: 100%;
+    background-color: #6385fc;
+    color: #e0ffff;
+    writing-mode: sideways-lr;
+    text-align: center;
+    line-height: 2rem;
+}

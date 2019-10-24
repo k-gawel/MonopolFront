@@ -31,9 +31,19 @@ export class GameService {
 
 
   getExistingGame() {
+    let clean = () => {
+        this.sessionService.clean();
+        this.$board.next(null);
+    };
+
+    let processResult = (r) => {
+      if(r != null) this.createGame(r);
+      else clean();
+    };
+
     this.requestService.existingPlayerGame(this.sessionService.getSession())
-        .then(r => this.createGame(r))
-        .catch(e => this.$board.next(null));
+        .then(processResult)
+        .catch(clean);
   }
 
   addPlayer(player: Player) {
@@ -58,8 +68,8 @@ export class GameService {
     (<JSON[]> gameJson['discounts']).forEach(d => Discount.get(d));
 
     this.$currentTour.next(Tour.get(gameJson['current_tour']));
-    this.$board.next(Board.get(gameJson['board']));
     this.transactionService.fromJSON(gameJson['current_transaction']);
+    this.$board.next(Board.get(gameJson['board']));
   }
 
   cleanLists() {
@@ -73,11 +83,13 @@ export class GameService {
   }
 
   abortGame(winner?: Player) {
-
     if (winner != undefined)
       alert(winner.name + " HAS WON!");
 
+    this.webSocketService.closeSocket();
     this.$board.next(null);
+    this.cleanLists();
+    this.sessionService.clean();
   }
 
 

@@ -1,15 +1,17 @@
+<span class="field-name" [ngStyle]="{'color': field.owner.color}">
+  {{field.name}}
+</span>
 
-<!--suppress AngularInvalidExpressionResultType -->
-  <div class="content" [attr.name]="'field-' + field.getProperty().uuid" (click)="select(field)">
-    <app-town-field *ngIf="type === 'TOWN'" [town]="field.getProperty()"></app-town-field>
-    <app-utility-field *ngIf="type === 'UTILITY'" [utility]="field.getProperty()"></app-utility-field>
-    <app-card-field *ngIf="type === 'CARD_GROUP'" [card]="field.getProperty()"></app-card-field>
-  </div>
+<span class="field-index">
+  {{field.index}}
+</span>
 
-  <div class="pawns-area">
-    <div class="pawn tooltip" *ngFor="let playersPown of field.players.toArray()"
-      [ngStyle]="{'background-color': playersPown.color}">
-      <span class="tooltiptext">{{playersPown.name}}</span>
-    </div>
-  </div>
+<span class="field-icon" [ngClass]="iconClass" [ngStyle]="{'color': iconColor}"></span>
 
+<div class="town-improvements" *ngIf="type === 'TOWN'">
+  <div class="town-improvement" *ngFor="let i of field.town.improvements.array"></div>
+</div>
+
+<div class="pawn-area">
+    <i class="player-pawn" *ngFor="let p of field.players.array" [ngStyle]="{'color': p.color}"></i>
+</div>

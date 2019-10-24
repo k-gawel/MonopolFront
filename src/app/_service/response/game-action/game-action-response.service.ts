@@ -34,6 +34,7 @@ export class GameActionResponseService {
     tour.index = message.tour.index;
     tour.endTime = message.tour.endTime;
     tour.dice_rolled = false;
+    tour.rolled = null;
     this.chatService.endOfTourMessage(tour);
     this.gameService.$currentTour.next(tour);
   }

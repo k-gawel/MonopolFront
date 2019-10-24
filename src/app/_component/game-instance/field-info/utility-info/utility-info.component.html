@@ -1,23 +1,38 @@
-<mat-toolbar color="primary" style="height: 20%; display: flex; width: 100%; padding: 0 5px">
+<div class="field-info-header">
 
   <button mat-icon-button (click)="back()">
     <mat-icon>keyboard_return</mat-icon>
   </button>
 
-  <div class="mat" style="margin: 0; width: calc(100% - 40px)">
-    <div class="mat-card-title" style="width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap">
-      {{utility.name}}
-    </div>
-    <div class="mat-card-subtitle" style="display: flex; justify-content: space-between">
-      <span>{{utility.region.name}}</span>
-      <span (click)="select(utility.owner)">{{utility.owner.name}}</span>
-      <span>{{utility.getBasicPrice().toString()}}</span>
-    </div>
-  </div>
-</mat-toolbar>
+  <span class="field-info-title">
+    {{utility.name}}
+  </span>
+
+</div>
 
 <mat-accordion>
 
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        DETAILS
+      </mat-panel-title>
+
+    </mat-expansion-panel-header>
+
+    <div class="town-info">
+      <p class="town-info-row">
+        REGION: {{utility.region.name}}
+      </p>
+      <p class="town-info-row">
+        OWNER: {{utility.owner.name}}
+      </p>
+      <p class="town-info-row">
+        PRICE: {{utility.getBasicPrice()}}
+      </p>
+    </div>
+
+  </mat-expansion-panel>
 
   <mat-expansion-panel>
     <mat-expansion-panel-header>
@@ -26,7 +41,7 @@
       </mat-panel-title>
     </mat-expansion-panel-header>
 
-    <div *ngFor="let util of utility.region.utilities.toArray(); let i = index"  style="height: 16.6666%; display: flex; justify-content: space-between">
+    <div *ngFor="let util of utility.region.utilities.array; let i = index"  style="height: 16.6666%; display: flex; justify-content: space-between">
       <span>OWNS: {{i}}</span>
       <span>{{utility.chargeOf(i).toString()}}</span>
     </div>

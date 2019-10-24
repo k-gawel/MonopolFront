@@ -1,0 +1,48 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+}
+
+.transaction-shadow {
+    width: 100%;
+    height: calc(100% - 1.5rem);
+    background-color: grey;
+    opacity: 0.5;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
+}
+
+.transaction-shadow:before {
+    content: 'ACCEPTED';
+    font-size: 3rem;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+
+}
+
+.transaction-offers {
+    height: calc(100% - 1.5rem);
+    display: flex;
+    flex: 0 1 auto;
+}
+
+.transaction-offer {
+    height: 100%;
+    width: 50%;
+    box-sizing: border-box;
+}
+
+.transaction-offer:not(:last-child) {
+    border-right: solid black 0.05rem;
+}
+
+.transaction-footer {
+    height: 1.5rem;
+}

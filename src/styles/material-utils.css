@@ -1,0 +1,90 @@
+.mat-icon {
+    height: 1.5rem !important;
+    width: 1.5rem !important;
+    font-size: 1.5rem !important;
+    line-height: 1.5rem !important;
+}
+
+.mat-icon-button {
+    height: 2rem !important;
+    width: 2rem !important;
+    line-height: 1.5rem !important;
+}
+
+
+/*EXPANSION PANEL*/
+
+.mat-expansion-panel {
+    border-radius: 0.2rem !important;
+}
+
+.mat-expansion-panel-header {
+    font-size: 0.75rem !important;
+    height: 2.3995rem !important;
+    padding: 0 1.2rem !important;
+}
+
+.mat-expansion-panel-header-title {
+    font-size: 0.75rem !important;
+    margin-right: 0.8rem !important;
+}
+
+.mat-expansion-panel-header-description {
+    margin-right: 0.8rem !important;
+}
+
+.mat-expansion-indicator::after {
+    border-width: 0 0.1rem 0.1rem 0 !important;
+    padding: 0.15rem !important;
+}
+
+.mat-expansion-panel-spacing {
+    margin: 0.8rem 0 !important;
+}
+
+.mat-expansion-panel-content {
+    font: 400 0.7rem/1rem Roboto, "Helvetica Neue", sans-serif !important;
+}
+
+.mat-expansion-panel-body {
+    padding: 0 1.2rem 0.8rem !important;
+}
+
+/* MAT LIST*/
+
+.mat-list-base {
+    padding-top: 0.4rem !important;
+}
+
+.mat-list-base .mat-list-item {
+    font-size: 0.8rem !important;
+    height: 2.4rem !important;
+    line-height: 0.8rem !important;
+}
+
+.mat-list-base .mat-list-item .mat-list-item-content {
+    padding: 0.8rem !important;
+}
+
+.mat-list-base .mat-list-item .mat-line:nth-child(n+2) {
+    font-size: 0.7rem !important;
+}
+
+/* MAT BUTTON */
+
+.mat-button {
+    min-width: 3.2rem !important;
+    line-height: 1.8rem !important;
+    padding: 0 0.8rem ! important;
+    border-radius: 0.2rem !important;
+    font-size: 0.7rem !important;
+}
+
+
+/* MAT CARD */
+
+.mat-card-content {
+    font-size: 0.7rem !important;
+    margin-bottom: 0.8rem !important;
+    padding: 0.5rem !important;
+}

@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, HostListener, Input, OnInit, Output} from '@angular/core';
 import {BankTransaction, Transaction} from "../../../../../_model/instance/utils/transaction/Transaction";
 import {Player} from "../../../../../_model/instance/Player";
 import {Town} from "../../../../../_model/instance/properties/transferable/Town";
@@ -6,6 +6,7 @@ import {TransactionRequestService} from "../../../../../_service/request/transac
 import {Utility} from "../../../../../_model/instance/properties/transferable/Utility";
 import {Improvement} from "../../../../../_model/instance/properties/transferable/Improvement";
 import {GameService} from "../../../../../_service/game/game/game.service";
+import {InstanceHighlightService} from "../../../../../_service/game/game/instance-highlight.service";
 
 @Component({
   selector: 'app-transaction-add',
@@ -33,34 +34,21 @@ export class TransactionAddComponent implements OnInit {
   }
 
 
-
-  getTowns(): Town[] {
-    return this.side.properties.toArray()
-        .filter(p => p instanceof Town)
-        .map(t => <Town> t)
-        .filter(t => t.addProperty() === true);
+  get availableTowns(): Town[] {
+    return this.side.properties.getTowns().filter(t => t.addProperty() === true);
   }
 
-  getUtilities(): Utility[] {
-    return this.side.properties.toArray()
-        .filter(p => p instanceof Utility)
-        .map(u => <Utility> u)
-        .filter(p => p.addProperty() === true);
+  get availableUtilities(): Utility[] {
+    return this.side.properties.getUtilities().filter(p => p.addProperty() === true);
   }
 
-  getImprovements(): Improvement[] {
-    return this.side.properties.toArray()
-        .filter(p => p instanceof Improvement)
-        .map(i => <Improvement> i)
-        .filter(p => p.addProperty() === true);
+  get availableImprovements(): Improvement[] {
+    return this.side.properties.getImprovements().filter(p => p.addProperty() === true);
   }
-
 
   newImprovement() {
     this.requestService.addNewImprovement(this.side, this.newImprovementForm);
   }
-
-
 
 
 }
@@ -121,7 +109,7 @@ export class NewImprovementForm {
   @Input() side: Player;
 
   getTownsThaCanBeImproved(): Town[] {
-    return this.side.properties.toArray()
+    return this.side.properties.array
         .filter(p => p instanceof Town).map(p => <Town> p)
         .filter(p => this.side.equals(p.region.getOwner()))
         .filter(p => p.improvements.size() < 5);

@@ -9,6 +9,7 @@ import {stringify} from "querystring";
 import {GameService} from "../../game/game/game.service";
 import {InfoCardService} from "../../game/field-info/info-card.service";
 import {buildOptimizerLoader} from "@angular-devkit/build-angular/src/angular-cli-files/models/webpack-configs";
+import {SessionService} from "../../utils/cookies/session-service";
 
 @Injectable({
   providedIn: 'root'
@@ -16,7 +17,8 @@ import {buildOptimizerLoader} from "@angular-devkit/build-angular/src/angular-cl
 export class PlayerActionResponseService {
 
   constructor(private gameService: GameService,
-              private infoService: InfoCardService) { }
+              private infoService: InfoCardService,
+              private sessionService: SessionService) { }
 
 
   public receiveMessage(message: PlayerActionResponse) {
@@ -32,7 +34,12 @@ export class PlayerActionResponseService {
   move(message: PlayerMoveResponse) {
     let player: Player = Player.get(message.playerUuid);
     let board: Board = this.gameService.$board.value;
+    let currentField = board.getByPlayer(player);
     let destination: Field = board.getByUUID(message.destination);
+
+    let distance = board.distance(currentField, destination);
+    this.gameService.$currentTour.value.rolled = distance;
+
     this.infoService.setField(destination);
     this.gameService.$currentTour.value.dice_rolled = true;
     board.movePlayer(player, destination);
@@ -43,15 +50,19 @@ export class PlayerActionResponseService {
     let player: Player   = Player.get(message.playerUuid);
     let newAdmin: Player = Player.get(message.new_admin);
     let winner: Player   = Player.get(message.winner);
-    let loser:  Player   = Player.get(message.loser)
+    let loser:  Player   = Player.get(message.loser);
     let aborted: boolean = message.aborted;
 
-    if(aborted)
+    console.log("Player", player);
+
+    if(this.sessionService.getPlayer().equals(player))
+      this.gameService.abortGame();
+    else if(aborted)
       this.gameService.abortGame(winner);
     else {
       Player.ADMIN = newAdmin != null ? newAdmin.uuid : Player.ADMIN;
-      Player.ALL.remove(player);
       this.gameService.$board.value.removePlayer(player);
+      player.status = false;
     }
 
   }

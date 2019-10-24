@@ -21,12 +21,9 @@ export class AppComponent implements OnInit {
   currentBoard: Board;
 
   ngOnInit(): void {
-    this.webSocketService.$message
-        .subscribe(m => this.responseService.receiveMessage(m));
+    this.webSocketService.$message.subscribe(m => this.responseService.receiveMessage(m));
 
-    this.gameService.$board.subscribe(b => {
-      this.currentBoard = b;
-    });
+    this.gameService.$board.subscribe(b => this.currentBoard = b );
 
     this.gameService.getExistingGame();
   }

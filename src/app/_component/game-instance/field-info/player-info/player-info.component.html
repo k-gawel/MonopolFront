@@ -1,15 +1,18 @@
- <mat-toolbar color="primary" style="height: 20%; display: flex; width: 100%; padding: 0 5px">
+<div class="field-info-header">
+
     <button mat-icon-button (click)="back()">
-      <mat-icon>keyboard_return</mat-icon>
+        <mat-icon>keyboard_return</mat-icon>
     </button>
 
-   <div>
-    <mat-card-title>{{player.name}}</mat-card-title>
-    <mat-card-subtitle>{{player.properties.getMoney().toString()}}</mat-card-subtitle>
-   </div>
- </mat-toolbar>
+    <span class="field-info-title">
+        {{player.name}}
+    </span>
 
-  <mat-divider></mat-divider>
+</div>
+
+<div class="field-info-body">
+
+    {{player.properties.getMoney().toString()}}
 
     <mat-accordion>
 
@@ -56,4 +59,6 @@
 
     </mat-expansion-panel>
 
-  </mat-accordion>
+    </mat-accordion>
+
+</div>

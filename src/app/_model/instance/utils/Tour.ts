@@ -6,6 +6,7 @@ export class Tour {
   public index: number;
   public endTime: Date;
   public dice_rolled: boolean;
+  public rolled: number;
 
   public constructor() {}
 
@@ -13,7 +14,7 @@ export class Tour {
     try {
       let result: Tour = new Tour();
       result.player = Player.get(json['player']);
-      result.endTime = new Date(json['end_time']);
+      result.endTime = new Date(json['end_date']);
       result.index = json['index'];
       result.dice_rolled = json['dice_rolled'];
       return result;

@@ -1,4 +1,4 @@
-import {Component, Input, OnInit, SystemJsNgModuleLoader} from '@angular/core';
+import {Component, HostListener, Input, OnInit, SystemJsNgModuleLoader} from '@angular/core';
 import {Transferable} from "../../../../../_model/instance/interfaces/Transferable";
 import {Transaction} from "../../../../../_model/instance/utils/transaction/Transaction";
 import {TransactionRequestService} from "../../../../../_service/request/transaction/transaction-request.service";
@@ -25,6 +25,10 @@ export class TransferableItemComponent implements OnInit {
   name: string;
   subname: string;
   price: string;
+
+  @HostListener('click') onClick() {
+    this.infoService.setField(this.transferable);
+  }
 
   addItem() {
     this.requestService.addExistingTransferable(<Town | Utility | Improvement> this.transferable);

@@ -1,27 +1,6 @@
-<div class="board">
-
-  <div class="fields-row" *ngFor="let r of [0, 1, 2,3]; let i = index">
-    <app-field
-            class="field"
-            [attr.field]="_board.getByIndex(f).uuid"
-            [attr.field-content]="_board.getByIndex(f).getProperty().uuid"
-            *ngFor="let f of getQuarter(i)" [field]="_board.getByIndex(f)"></app-field>
-  </div>
-
-  <div class="middle-container">
-    <div class="cell chat">
-      <app-chat></app-chat>
-    </div>
-    <div class="cell transaction">
-      <app-transaction-container></app-transaction-container>
-    </div>
-    <div class="cell field-info">
-      <app-field-info></app-field-info>
-    </div>
-    <div class="cell actions">
-      <app-actions-menu></app-actions-menu>
-    </div>
-  </div>
-
+<div class="field-row" *ngFor="let r of [0, 1, 2, 3]; let i = index">
+  <app-field [attr.field]="_board.getByIndex(f).uuid"
+             [attr.field-content]="_board.getByIndex(f).getProperty().uuid"
+             *ngFor="let f of getQuarter(i)" [field]="_board.getByIndex(f)">
+  </app-field>
 </div>
-

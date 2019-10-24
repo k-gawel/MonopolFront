@@ -1,0 +1,14 @@
+:host{
+    background: #3f51b5;
+    color: #fff;
+    display: flex;
+    flex-direction: row;
+    font-family: "Font Awesome 5 Free";
+    line-height: calc(0.6 * 5rem);
+}
+
+
+
+.offer-header-title {
+
+}

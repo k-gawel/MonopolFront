@@ -21,7 +21,7 @@ export class UtilityInfoComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.discounts = Player.ALL.toArray()
+    this.discounts = this.getPlayers()
         .filter(p => !p.isBank())
         .map(p => p.properties.getDiscount(this.utility))
         .filter(d => d != null);
@@ -36,11 +36,8 @@ export class UtilityInfoComponent implements OnInit {
   }
 
   getPlayers(): Player[] {
-    return Player.ALL.toArray();
+    return Player.ACTIVE.array;
   }
-
-  get
-
 
 
 }

@@ -5,6 +5,7 @@ import {Transferable} from "../../interfaces/Transferable";
 import {Money} from "./Money";
 import {AbstractTransferable} from "./AbstractTransferable";
 import {Chargeable} from "../../interfaces/Chargeable";
+import {RGBColor} from "../../../utils/RGBColor";
 
 export class Town extends AbstractTransferable implements Transferable, Chargeable {
 
@@ -12,9 +13,10 @@ export class Town extends AbstractTransferable implements Transferable, Chargeab
   price: number;
   region: TownRegion;
   owner: Player;
-  improvements: InstancesList<Improvement> = new InstancesList();
+  color: RGBColor;
+  improvements: InstancesList<Improvement> = new InstancesList<Improvement>();
 
-  static ALL: InstancesList<Town> = new InstancesList();
+  static ALL: InstancesList<Town> = new InstancesList<Town>();
 
   constructor(uuid: string) {
     super(uuid);
@@ -34,6 +36,7 @@ export class Town extends AbstractTransferable implements Transferable, Chargeab
     result.region = TownRegion.get(json['region']);
     result.owner = Player.get(json['owner']);
     result.owner.properties.push(result);
+    result.color = new RGBColor(json['color']);
     (<JSON[]> json['improvements'])
       .forEach(j => result.improvements.push(Improvement.get(json['improvement'])));
 
@@ -81,7 +84,7 @@ export class Town extends AbstractTransferable implements Transferable, Chargeab
 
   getBasicPrice(): Money {
     let townPrice = this.price;
-    let improvementsPrice = this.improvements.toArray()
+    let improvementsPrice = this.improvements.array
       .map((i: Improvement) => i.getBasicPrice().amount)
       .reduce((partial_sum, a) => partial_sum + a, 0);
 
@@ -96,13 +99,17 @@ export class Town extends AbstractTransferable implements Transferable, Chargeab
   }
 
 
+
   transfer(sender: Player, receiver: Player) {
     sender.properties.remove(this);
     receiver.properties.push(this);
     this.owner = receiver;
-    this.improvements.toArray().forEach(i => i.transfer(sender, receiver));
+    this.improvements.array.forEach(i => i.transfer(sender, receiver));
   }
 
+  get simpleString(): string {
+    return this.name.toUpperCase().split(" ").map(s => s[0]).join(".") + ".";
+  }
 
   toString(): string {
     return this.name.toUpperCase();
@@ -142,14 +149,14 @@ export class TownRegion extends AbstractInstance {
 
 
   hasImprovementsOn(): boolean {
-    return this.towns.toArray()
+    return this.towns.array
       .filter(t => t.improvements.size() > 0)
       .length == 0;
   }
 
 
   getOwner(): Player {
-    let townsArr = this.towns.toArray();
+    let townsArr = this.towns.array;
 
     let firstOwner = townsArr[0].owner;
 

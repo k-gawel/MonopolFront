@@ -29,7 +29,7 @@ export class GamesListComponent implements OnInit {
       alert("Name can't be null");
     else
       this.requestService.newPlayerGame(this.name, link.uuid)
-          .then(r => this.gameService.createGame(r));
+                         .then(r => this.gameService.createGame(r));
   }
 
   createNewGame(): void {
@@ -37,7 +37,7 @@ export class GamesListComponent implements OnInit {
       alert("Name can't be null");
     else
       this.requestService.newPlayerGame(this.name)
-          .then(r => this.gameService.createGame(r));
+                         .then(r => this.gameService.createGame(r));
   }
 
 

@@ -11,8 +11,15 @@ export class OfferComponent implements OnInit {
 
   @Input() transaction: Transaction;
   @Input() side: Player;
-  add: boolean;
+  _add: boolean;
 
+  get add(): boolean {
+    return this.transaction.accepted() != null || this._add;
+  }
+
+  set add(value: boolean) {
+    this._add = value;
+  }
 
   constructor() { }
 

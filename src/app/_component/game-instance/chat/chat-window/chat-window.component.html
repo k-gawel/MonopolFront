@@ -1,18 +1,10 @@
-<mat-toolbar color="primary" style="height: 15%; align-content: center">
-    <span *ngIf="currentTour != null" style="display: flex; justify-content: space-between; width: 100%">
-        <span>TOUR: {{currentTour.index}}</span>
-        <span>{{currentTour.player.name}}</span>
-    </span>
-    <span *ngIf="currentTour == null">GAME DIDN'T STARTED YET</span>
-</mat-toolbar>
-
-<div #chatContainer style="height: 70%; background-color: white; overflow-y: scroll">
+<div #chatContainer class="chat-window">
   <app-chat-message *ngFor="let m of messagesarray" [messageArray]="m"></app-chat-message>
 </div>
 
 <mat-divider></mat-divider>
 
-<mat-form-field color="primary" appearance="legacy" style="height: 15%; width: 100%">
+<mat-form-field color="primary" appearance="legacy" class="chat-input">
 
     <input matInput min="0" name="newMessage" type="text" placeholder="Send chat message" (keyup.ENTER)="sendMessage()" [(ngModel)]="newMessage">
 

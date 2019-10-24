@@ -4,6 +4,7 @@ import {Bank, Player} from "../../Player";
 import {Money} from "./Money";
 import {AbstractTransferable} from "./AbstractTransferable";
 import {Chargeable} from "../../interfaces/Chargeable";
+import {RGBColor} from "../../../utils/RGBColor";
 
 export class Utility extends AbstractTransferable implements Transferable, Chargeable {
 
@@ -11,13 +12,14 @@ export class Utility extends AbstractTransferable implements Transferable, Charg
   region: UtilityRegion;
   name: string;
   price: number;
+  color: RGBColor;
 
   constructor(ref: string) {
     super(ref);
     Utility.ALL.push(this);
   }
 
-  static ALL: InstancesList<Utility> = new InstancesList();
+  static ALL: InstancesList<Utility> = new InstancesList<Utility>();
 
   static get(ref: string | JSON): Utility {
     if(typeof ref === 'string')
@@ -31,6 +33,7 @@ export class Utility extends AbstractTransferable implements Transferable, Charg
     result.owner.properties.push(result);
     result.region = UtilityRegion.get(json['region']);
     result.name = json['name'];
+    result.color = new RGBColor(json['color']);
     result.price = json['price'];
 
     return result;
@@ -72,7 +75,9 @@ export class Utility extends AbstractTransferable implements Transferable, Charg
     receiver.properties.push(this);
   }
 
-
+  get simpleString(): string {
+      return this.name.toUpperCase().split(" ").map(s => s[0]).join(".");
+  }
 
   toString(): string {
     return this.name;
@@ -115,7 +120,7 @@ export class UtilityRegion extends AbstractInstance {
     if(p.isBank())
       return 0;
 
-    return this.utilities.toArray().filter(u => u.getOwner().equals(p)).length;
+    return this.utilities.array.filter(u => u.getOwner().equals(p)).length;
   }
 
 

@@ -1,13 +1,11 @@
-
-
 <ng-container *ngIf="isBank()" class="transaction-status-buttons">
 
-  <button mat-button [disabled]="!canAfford()" (click)="setStatus(true)">
+  <button mat-button *ngIf="status" [disabled]="!canAfford()" (click)="setStatus()">
     <span *ngIf="getDifference() > 0">RECEIVE ${{getDifference()}}</span>
     <span *ngIf="getDifference() <= 0">PAY ${{-getDifference()}}</span>
   </button>
 
-  <button mat-button class="status-button" (click)="setStatus(false)">
+  <button mat-button *ngIf="!status" class="status-button" (click)="setStatus()">
     DECLINE
   </button>
 
@@ -16,10 +14,11 @@
 
 <ng-container *ngIf="isCompulsory()" class="transaction-status-buttons">
 
-  <button mat-button (click)="setStatus(true)">
+  <button mat-button *ngIf="status" (click)="setStatus()">
     ACCEPT
   </button>
-  <button mat-button (click)="setStatus(false)">
+
+  <button mat-button *ngIf="!status" (click)="setStatus()">
     {{isInitiator() ? 'COLLECT ' : 'PAY ' + getDemand().toString()}}
   </button>
 
@@ -28,21 +27,11 @@
 
 <ng-container *ngIf="isVoluntary()" class="transaction-status-buttons">
 
-  <button mat-button (click)="setStatus(true)">
+  <button mat-button *ngIf="status" (click)="setStatus()">
     ACCEPT
   </button>
-  <button mat-button (click)="setStatus(false)">
+  <button mat-button *ngIf="!status" (click)="setStatus()">
     DECLINE
   </button>
 
 </ng-container>
-
-<span *ngIf="isCompulsory()">
-  <span *ngIf="isInitiator()">{{transaction.getInvited().name}} OWES YOU </span>
-  <span *ngIf="!isInitiator()">YOU OWE {{transaction.getInitiator()}} </span>
-  {{transaction.demand.toString() //noinspection UnresolvedVariable}}
-</span>
-
-<span *ngIf="!isCompulsory()">
-  TRANSACTION WITH {{isInitiator() ? transaction.getInvited().name : transaction.getInitiator().name}}
-</span>

@@ -13,6 +13,10 @@ export class SessionService {
 
   public $session: BehaviorSubject<Session> = new BehaviorSubject(null);
 
+  clean(): void {
+    this.cookieService.delete("session-token");
+  }
+
   getGameUuid(): string {
     return this.getPart(0);
   }
@@ -53,7 +57,7 @@ export class SessionService {
 
   getAdmin(): Player {
     try {
-      return Player.ALL.toArray()[1];
+      return Player.ALL.array.filter(p => p.isBank())[0];
     } catch (e) {
       return null;
     }

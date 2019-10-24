@@ -1,0 +1,46 @@
+.field-row {
+    width: var(--rwx);
+    height: var(--rhx);
+    direction: rtl;
+    position: absolute;
+}
+
+.field-row:nth-child(1) {
+    top: var(--rwx);
+    left: var(--rhx);
+}
+
+.field-row:nth-child(2) {
+    transform: rotate(90deg);
+    top: calc(0.5 * var(--rwx) + 0.5 *var(--fhx));
+    left: calc((-0.5 * var(--rwx)) + (0.5 * var(--fhx)));
+}
+
+.field-row:nth-child(3) {
+    direction: ltr;
+}
+
+.field-row:nth-child(4) {
+    transform: rotate(270deg);
+    left: calc(0.5 * var(--rwx) + 0.5 * var(--rhx));
+    top: calc(0.5 * var(--rwx) - 0.5 * var(--rhx));
+}
+
+.pulsing {
+    background-color: #222;
+    animation-name: color;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes color {
+    0% {
+        background-color: #222;
+    }
+    50% {
+        background-color: #4285f4;
+    }
+    100% {
+        background-color: #222;
+    }
+}

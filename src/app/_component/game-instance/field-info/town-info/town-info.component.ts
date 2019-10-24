@@ -18,7 +18,7 @@ export class TownInfoComponent implements OnInit {
   constructor(private service: InfoCardService) { }
 
   ngOnInit() {
-    this.discounts = Player.ALL.toArray()
+    this.discounts = this.getPlayers()
         .filter(p => !p.isBank())
         .map(p => p.properties.getDiscount(this.town))
         .filter(d => d != null);
@@ -29,8 +29,7 @@ export class TownInfoComponent implements OnInit {
   }
 
   getPlayers(): Player[] {
-    return Player.ALL.toArray()
-        .filter(p => !p.isBank())
+    return Player.ACTIVE.array.filter(p => !p.isBank())
   }
 
 }

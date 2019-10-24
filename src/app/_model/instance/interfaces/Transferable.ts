@@ -19,14 +19,12 @@ export interface Transferable extends Instance {
 
   removeProperty(): boolean | null;
   setRemoveProperty(value: boolean | null);
-
 }
 
 
 export class TransferableCollection extends InstancesList<Transferable> {
 
   private money: Money = new Money();
-  private discounts: Discount[] = [];
 
   static get(items: string[]): TransferableCollection {
     let result: TransferableCollection = new TransferableCollection();
@@ -52,7 +50,8 @@ export class TransferableCollection extends InstancesList<Transferable> {
 
   private putDiscount(discount: Discount) {
     let currentDiscount = this.getDiscount(discount.chargeable);
-    this.remove(currentDiscount);
+    if(currentDiscount != null)
+      this.remove(currentDiscount);
     super.push(discount);
   }
 
@@ -64,7 +63,7 @@ export class TransferableCollection extends InstancesList<Transferable> {
   }
 
   public getDiscount(chargeable: Chargeable): Discount {
-    return  this.getDiscounts().find(d => {
+    return this.getDiscounts().find(d => {
       return d.chargeable.equals(chargeable)});
   }
 
@@ -81,30 +80,30 @@ export class TransferableCollection extends InstancesList<Transferable> {
 
   public getBasicPrice(): Money {
     let moneyAmount = this.money.amount;
-    this.toArray().map(t => t.getBasicPrice().amount).forEach(a => moneyAmount += a);
+    this.array.map(t => t.getBasicPrice().amount).forEach(a => moneyAmount += a);
     return new Money(moneyAmount);
   }
 
   public getTowns(): Town[] {
-    return this.toArray()
+    return this.array
         .filter(t => t instanceof Town)
         .map(t => <Town> t);
   }
 
   public getUtilities(): Utility[] {
-    return this.toArray()
+    return this.array
         .filter(t => t instanceof Utility)
         .map(u => <Utility> u);
   }
 
   public getImprovements(): Improvement[] {
-    return this.toArray()
+    return this.array
         .filter(t => t instanceof Improvement)
         .map(t => <Improvement> t);
   }
 
   public getDiscounts(): Discount[] {
-    return this.toArray()
+    return this.array
         .filter(t => t instanceof Discount)
         .map(t => <Discount> t);
   }

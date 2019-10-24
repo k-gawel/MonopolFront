@@ -1,0 +1,22 @@
+.field-info-header {
+    position: relative;
+    background: #3f51b5;
+    color: #fff;
+    display: flex;
+    width: 100%;
+    padding: 0.6rem;
+    box-sizing: border-box;
+}
+
+
+.field-info-title {
+    font-size: 1.5rem;
+    width: 100%;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.field-info-body {
+
+}

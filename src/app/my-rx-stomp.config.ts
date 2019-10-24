@@ -1,10 +1,10 @@
 import {InjectableRxStompConfig} from '@stomp/ng2-stompjs';
 
-console.log("WS URL", "ws://" + location.host + location.pathname + "game-socket");
+console.log("WS URL", "ws://" + window.location.hostname + ":8080/monopol-server-0.0.2/" + "game-socket");
 
 export const myRxStompConfig: InjectableRxStompConfig = {
     // Which server?
-    brokerURL: "ws://" + location.host + location.pathname + "game-socket",
+    brokerURL: "ws://" + window.location.hostname + ":8080/monopol-server-0.0.2/" + "game-socket",
 
     // Headers
     // Typical keys: login, passcode, host

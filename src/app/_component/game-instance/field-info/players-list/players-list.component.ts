@@ -16,8 +16,7 @@ export class PlayersListComponent implements OnInit {
 
 
   getPlayers(): Player[] {
-    return Player.ALL.toArray()
-        .filter(p => !p.isBank());
+    return Player.ACTIVE.array.filter(p => !p.isBank());
   }
 
   back() {

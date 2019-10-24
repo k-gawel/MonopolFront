@@ -1,0 +1,34 @@
+.offer-header {
+    position: relative;
+
+    background: #3f51b5;
+    color: #fff;
+
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+
+    display: flex;
+    justify-content: space-between;
+
+    height: 2rem;
+    padding: 0.25rem;
+}
+
+.offer-items {
+    height: calc(100% - 2.5rem);
+    overflow: auto;
+}
+
+.mat-icon {
+    height: 1.5rem !important;
+    width: 1.5rem !important;
+    font-size: 1.5rem !important;
+    line-height: 1.5rem !important;
+}
+
+.mat-icon-button {
+    height: 2rem !important;
+    width: 2rem !important;
+    line-height: 2rem !important;
+}

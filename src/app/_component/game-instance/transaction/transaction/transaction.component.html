@@ -1,23 +1,25 @@
-<mat-toolbar color="accent" style="height: 15%">
-  <app-transaction-status [transaction]="transaction"></app-transaction-status>
-</mat-toolbar>
-
-<div *ngIf="transaction.accepted() === null" style="width: 100%; height: 80%; background-color: grey; opacity: 0.5; position: absolute; top: 15%">
+<div *ngIf="transaction.accepted() === null" class="transaction-shadow">
 
 </div>
 
-<div style="width: 100%; display: flex; height: 85%; ">
+<div class="transaction-offers">
 
-  <div style="border-right: solid black 1px; width: 50%; box-sizing: border-box">
+  <div class="transaction-offer">
 
     <app-offer [side]="player()" [transaction]="transaction"></app-offer>
 
   </div>
 
-  <div style="width: 50%; box-sizing: border-box">
+  <div class="transaction-offer">
 
     <app-offer [side]="otherSide()" [transaction]="transaction"></app-offer>
 
   </div>
 
 </div>
+
+<div class="transaction-footer">
+  <app-transaction-status [transaction]="transaction" [status]="true"></app-transaction-status>
+  <app-transaction-status [transaction]="transaction" [status]="false"></app-transaction-status>
+</div>
+

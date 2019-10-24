@@ -53,4 +53,25 @@ export class Board extends InstancesList<Field> {
     this.getByPlayer(player).removePlayer(player);
   }
 
+  next(field: Field): Field {
+    let nextIndex = field.index + 1;
+    if(nextIndex > this.size())
+      return undefined;
+    else if(nextIndex === this.size())
+      return this.getByIndex(0);
+    else
+      return this.getByIndex(nextIndex);
+  }
+
+  distance(from: Field, to: Field): number {
+    let distance = 1;
+    let nextField = this.next(from);
+    while(!nextField.equals(to)) {
+      distance++;
+      nextField = this.next(nextField);
+    }
+    return distance;
+  }
+
+
 }

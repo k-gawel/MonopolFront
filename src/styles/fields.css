@@ -1,9 +1,5 @@
-.field {
-    width: 10vmax;
-    height: 15.625vmax;
-    border: solid 1px black;
-}
-
-.fields-row {
-    display: inline-block;
+.field-hover {
+    border: #9ecaed solid 1px;
+    outline: none;
+    box-shadow: inset 0 0 5px #9ecaed;
 }

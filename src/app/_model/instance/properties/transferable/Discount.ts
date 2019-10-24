@@ -17,13 +17,13 @@ export abstract class Discount extends AbstractTransferable implements Transfera
     Discount.ALL.push(this);
   }
 
-  static ALL: InstancesList<Discount> = new InstancesList();
+  static ALL: InstancesList<Discount> = new InstancesList<Discount>();
 
   static get(ref: JSON | string): Discount {
-    if (typeof ref === 'string')
-      return this.ALL.getByUUID(ref);
+    if(ref === null) return null;
+    if (typeof ref === 'string') return this.ALL.getByUUID(ref);
 
-    let json: JSON = <JSON>ref;
+    let json: JSON = <JSON> ref;
     let result: Discount = this.ALL.getByUUID(json['uuid']);
     let type = json['type'];
     let chargeableType = json['chargeable_type'];
@@ -31,12 +31,12 @@ export abstract class Discount extends AbstractTransferable implements Transfera
       result = type === 'fixed' ?
         new FixedDiscount(json['uuid']) : new PercentageDiscount(json['uuid']);
 
+
     result.owner = Player.get(json['owner']);
-    result.owner.properties.push(result);
     result.endTour = json['end_tour'];
-    result.chargeable = chargeableType === 'town' ?
-      Town.get(json['chargeable']) : Utility.get(json['chargeable']);
+    result.chargeable = chargeableType === 'town' ? Town.get(json['chargeable']) : Utility.get(json['chargeable']);
     result.setValue(json['value']);
+    result.owner.properties.push(result);
 
     return result;
   }
@@ -82,8 +82,6 @@ export class PercentageDiscount extends Discount {
   toString(): string {
     return this.getValueString() + " | " + this.chargeable.name + " | " + this.endTour;
   }
-
-
 
 }
 

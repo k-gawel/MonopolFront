@@ -2,7 +2,10 @@ import {Injectable} from '@angular/core';
 import {Player} from "../../../_model/instance/Player";
 import {Transaction} from "../../../_model/instance/utils/transaction/Transaction";
 import {TransactionResponse} from "../../../_model/response/response/transaction/TransactionResponse";
-import {TransactionActionResponse} from "../../../_model/response/response/transaction/actions/TransactionActionResponse";
+import {
+    PropertyTransactionOperations,
+    TransactionActionResponse
+} from "../../../_model/response/response/transaction/actions/TransactionActionResponse";
 import {TransactionInitResponse} from "../../../_model/response/response/transaction/init/TransactionInitResponse";
 import {TransactionResultResponse} from "../../../_model/response/response/transaction/result/TransactionResultResponse";
 import {TransactionItemResponse} from "../../../_model/response/response/transaction/actions/item/TransactionItemResponse";
@@ -69,20 +72,20 @@ export class TransactionResponseService {
 
   private processItemAction(message: TransactionItemResponse) {
     let t = this.transactionService.$transaction.value;
-    let properties = TransferableCollection.ALL;
-    message.operations.forEach(o => {
-      let property = <Transferable> properties.getByUUID(o.property);
-      property.setAddProperty(o.add);
-      property.setRemoveProperty(o.remove);
-    });
+    message.operations.forEach(o => this.setProperties(o));
     if(message instanceof TransactionAddResponse)
       this.addItem(message);
     else if(message instanceof TransactionRemoveResponse)
       this.removeItem(message);
     else
       throw new Error("Wrong transaction item message type " + message);
+  }
 
 
+  private setProperties(operations: PropertyTransactionOperations): void {
+    let property = <Transferable> TransferableCollection.ALL.getByUUID(operations.property);
+    property.setAddProperty(operations.add);
+    property.setRemoveProperty(operations.remove);
   }
 
 
@@ -107,13 +110,15 @@ export class TransactionResponseService {
     let status = message['status'];
     let side = Player.get(message.side);
 
+    if(status && transaction != null)
+      transaction.accept(side);
   }
 
 
   private closeTransaction() {
     if(this.currentTransaction() == null) return;
 
-    InstancesList.ALL.toArray()
+    InstancesList.ALL.array
         .filter(i => i instanceof AbstractTransferable)
         .map(i => <Transferable> i)
         .forEach(t => {

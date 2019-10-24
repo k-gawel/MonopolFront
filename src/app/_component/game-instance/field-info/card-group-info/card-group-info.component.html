@@ -1,13 +1,14 @@
-<mat-toolbar color="primary" style="height: 20%; display: flex; width: 100%; padding: 0 5px">
+<div class="field-info-header">
+
   <button mat-icon-button (click)="back()">
     <mat-icon>keyboard_return</mat-icon>
   </button>
 
-  <div>
-    <mat-card-title>{{cardGroup.cardName}}</mat-card-title>
-  </div>
-</mat-toolbar>
+  <span class="field-info-title">
+    {{cardGroup.cardName}}
+  </span>
 
+</div>
 
 <mat-card-content>
   {{cardGroup.description}}
